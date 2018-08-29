@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Day 01: What's the Internet?</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../assets/slides.css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: middle
+
+<span>.eight[CSET-110]</span><br>
+<span>.eight[Web Development I]</span>
+<br>
+<br>
+
+# HTML Basics
+
+---
+
+![A Letter by Einstein](https://upload.wikimedia.org/wikipedia/commons/f/f7/Einstein_Szilard_p1.jpg)
+
+???
+What is this? A letter. You know because you've learned this, you've seen plenty of them before.
+
+---
+
+# What are the parts of a letter?
+
+---
+count: false
+
+# What are the parts of a letter?
+
+- Heading
+- Greeting
+- Body
+- Salutation
+
+???
+You also know this, because you learned this.
+Time for a weird question:
+
+---
+
+# .eight[Does the paper know what these parts are?]
+
+---
+count: false
+
+# .eight[Does the paper know what these parts are?]
+
+# Of course not!
+
+???
+Our conventions tell us where to put these parts on the paper and in what order, but that's it.
+
+---
+
+# Now let's imagine that letter as a web page.
+
+# .eight[Does the computer know what these parts are?]
+
+---
+class: middle, center
+
+# .eleven[Only if you tell it.]
+
+---
+class: middle, center
+
+![But Why?](http://i.imgur.com/Br00TCn.gif)
+
+???
+What do you think? Why would a computer need to know the parts of a letter?
+
+---
+class: middle, center
+
+# Unlike paper, the computer stores the letter data AND has to display it.
+
+???
+Those two things are separate actions.
+
+---
+class: middle, center
+
+# .eight[Semantics]
+
+???
+Philosophic question about what a thing is. Not what it is made of. Not how it is used. But why it exists.
+
+---
+
+# HTML is a Specification
+
+- [Read it](https://www.w3.org/TR/html52/) if you want, it's boring.
+- A specification is an agreed upon way for:
+  - You to write it 
+  - Browsers to display it
+
+---
+
+# HTML 5
+
+- Newest version of the spec
+- Plenty of older versions
+- Every web page needs to .eight[declare] it's version
+
+---
+class: middle
+
+# `<!DOCTYPE html>`
+
+???
+This isn't a tag. It's a document declaration.
+Back in the day, everything on the web was a document.
+Not declaring a valid doctype will get you into "quirks" mode.
+
+---
+class: middle, center
+
+# .eight[Everything else is Tags!!!]
+
+---
+class: middle, center
+
+![Anatomy of a Tag](https://mdn.mozillademos.org/files/7659/anatomy-of-an-html-element.png)
+
+???
+Pair of Angle Brackets + Tag Name + Optional Attributes.
+Open vs Closing tag is just the slash. No attributes in closing tags.
+Think of this as closing the lid on your box.
+
+---
+
+# Attributes
+
+- Modify the tag's default behavior
+- Provide more information about it.
+
+???
+Like command line flags.
+
+---
+class: middle, center
+
+# Attributes always come in name/value pairs
+
+# .eight[name="value"] 
+
+---
+
+# Examples
+
+# .eight[id="unique-identifier"]
+# .eight[href="some-link.com"]
+# .eight[checked]
+
+---
+count: false
+
+# Examples
+
+# .eight[id="unique-identifier"]
+# .eight[href="some-link.com"]
+# .eight[checked]="checked"
+
+---
+class: middle, center
+
+# A tag without attributes still has attributes.
+
+# .eight[Default Attributes]
+
+???
+Different for each tag, occasionally different across browsers.
+Remember the spec is just a set of rules, no one enforces them.
+
+---
+
+# Attributes
+
+- Can be in any order.
+- Only in the opening tag.
+
+---
+
+# Tags vs. Elements
+
+- The .eight[Tag] creates the .eight[Element]
+- Tags -> Source Code
+- Elements -> Display
+
+???
+Written input vs. rendered output.
+
+---
+
+# DOM
+
+- Document Object Model
+- An outline of your elements rendered on screen
+- Eventually, we'll learn to manipulate the DOM
+
+---
+class: middle, center
+
+![DOM Outline](https://courses.cs.washington.edu/courses/cse190m/07sp/lectures/slides/images/dom.png)
+
+???
+Think of your web page like an outline, each item is called a node.
+
+---
+
+# Nesting Elements
+
+- Wrapping content with a tag creates .eight[meaning]
+- Wrapping tags with tags creates .eight[organization]
+
+
+---
+class: middle, center
+
+![Nesting Dolls](http://drydenart.weebly.com/uploads/8/9/6/1/8961653/nesting-dolls_orig.gif)
+
+---
+
+# .eight[do this]
+```html
+<parent>
+  <child>...</child>
+</parent>
+```
+# .eleven[not this]
+```html
+<parent>
+  <child>...</parent>
+</child>
+```
+
+---
+class: middle, center
+
+![Guidelines, not rules](http://giant.gfycat.com/BothLongAstrangiacoral.gif)
+
+---
+class: middle, center
+
+# It's important for you to know the spec, but .eight[more important] to know how different browsers interpret that spec.
+
+
+---
+class: middle, center
+
+# Break Time
+
+---
+class: middle, center
+
+# Let's look at some tags!
+
+---
+
+# Places to look:
+
+- HTML5 Spec
+- Google
+- StackOverflow
+
+---
+count: false
+
+# Places to look:
+
+- HTML5 Spec
+- Google
+- StackOverflow
+- Mozilla Developer Network
+
+---
+class: middle, center
+
+# [MDN's HTML Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
+
+---
+
+# Tags you need to know for tomorrow:
+
+```
+- html          - h1 - h6   - div
+- head / body   - p         - ol / ul
+- meta          - a         - li
+- title         - img       - comments
+```
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
