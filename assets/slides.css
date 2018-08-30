@@ -9,6 +9,7 @@ body {
   color: var(--nord1);
   font-family: Courier, monospace;
   font-size: calc(.75rem + 1.75vw);
+  line-height: 160%;
   margin: 8vw;
 }
 
@@ -29,6 +30,14 @@ code, pre, .remark-code,
 {
   font-weight: 400;
 }
+code {
+  background: var(--nord6);
+  color: var(--nord9);
+  padding: 0.3rem 0.6rem;
+}
+code.remark-code {
+  background: transparent;
+}
 
 strong, b {
   font-weight: 700;
@@ -39,6 +48,10 @@ em, i {
 
 ol {
   padding-left: 9vw;
+}
+
+hr {
+  margin: 4rem 0 6rem;
 }
 
 .zero { color: var(--nord0); }
