@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document Structure</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../assets/slides.css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: middle, center
+
+# Document Structure
+
+---
+class: middle, center
+
+![Newspaper Example](https://mdn.mozillademos.org/files/12371/newspaper_small.jpg)
+
+???
+todo:
+---
+
+# Elements So Far
+
+- `&lt;p&gt;`
+- `&lt;img&gt;`
+- `&lt;input&gt;`
+- etc.
+
+.eight[Describe individual parts of your page.]
+
+---
+class: middle, center
+
+# .eight[Structural Elements]
+
+???
+But first, we have to learn about a distinction between different types of elements
+
+---
+class: middle
+
+# What will this render?
+
+```html
+&lt;a href="#one"&gt;Jump to Section One&lt;/a&gt;
+&lt;a href="#two"&gt;Jump to Section Two&lt;/a&gt;
+```
+
+---
+class: middle, center
+
+# Option 1
+![Inline Anchors - Option 1](images/inline-anchors-1.png)
+
+# Option 2
+![Inline Anchors - Option 2](images/inline-anchors-2.png)
+
+---
+class: middle
+
+# What will this render?
+
+```html
+&lt;input type="text" placeholder="email"&gt;
+&lt;input type="text" placeholder="password"&gt;
+```
+
+---
+class: middle, center
+
+# Option 1
+![Inline Inputs - Option 1](images/inline-inputs-1.png)
+
+# Option 2
+![Inline Inputs - Option 2](images/inline-inputs-2.png)
+
+---
+class: middle
+
+# What will this render?
+
+```html
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit&lt;/p&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit&lt;/p&gt;
+```
+
+---
+class: middle, center
+
+# Option 1
+![Block Paragraphs - Option 1](images/block-paragraphs-1.png)
+
+# Option 2
+![Block Paragraphs - Option 2](images/block-paragraphs-2.png)
+
+---
+class: middle, center
+
+# See the examples [here](document-structure-examples.html)
+
+---
+class: middle, center
+
+# .eight[Why is there a difference?]
+
+???
+Because HTML makes a distinction between different categories of content.
+
+---
+class: middle, center
+
+# Inline Elements
+
+# vs.
+
+# Block Level Elements
+
+???
+HTML has a concept called Flow. As the browser reads your code, it finds an element and needs to insert that into the viewport. That's why things written first appear at the top. More than that, though, is the rules applied to those elements and what can fit inside other elements.
+
+---
+class: middle
+
+# .eight[Inline Elements]
+
+## Describe small parts of your content and will not cause a new line to appear.
+
+???
+They are often found within paragraphs.
+
+---
+class: middle, center
+
+# .eight[Block Level Elements]
+
+## Describe blocks, or areas, of your page and will be on a separate line from what precedes it and follows it.
+
+---
+class: middle, center
+
+![Wooden Block Tower](https://target.scene7.com/is/image/Target/50105237_Alt01?wid=488&hei=488&fmt=pjpeg)
+
+---
+class: middle, center
+
+# Let's make a list!
+
+---
+
+# Nested Inline Elements
+
+- can have inline parents
+- can have block level parents
+
+---
+
+# Nested Inline Elements
+
+```html
+&lt;p&gt;&lt;strong&gt;Don't forget to &lt;a href="#"&gt;click here&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+```
+output:
+
+![Nested Inline Example](images/nested-inline-example.png)
+
+---
+
+# Nested Block Elements
+
+- can have block level parents
+
+---
+
+# Nested Block Elements
+
+```html
+&lt;div&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit&lt;/p&gt;
+&lt;/div&gt;
+```
+
+output:
+
+![Nested Block Elements](images/nested-block-example.png)
+
+---
+class: middle, center
+
+# .eleven[Never] Nest Block Elements Inside Inline Elements
+
+---
+class: middle
+
+```html
+&lt;a href="#"&gt;
+  &lt;h1&gt;My Resume&lt;/h1&gt;
+&lt;/a&gt;
+```
+
+???
+Now you might be noticing a trend with these code samples. Sometimes I have tags indented on new lines and sometimes I don't.
+
+---
+class: middle
+
+# What will this render?
+
+```html
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit&lt;/p&gt;
+&lt;p&gt;Lorem ipsum dolor        sit amet,
+                    consectetur adipiscing elit&lt;/p&gt;
+```
+
+---
+class: middle, center
+
+![Block Paragraphs - Option 1](images/block-paragraphs-1.png)
+
+---
+class: middle, center
+
+# .eight[Your browser will trim consecutive whitespace characters to a single character.]
+
+---
+class: middle
+
+```html
+&lt;p&gt;Lorem ipsum dolor        sit amet,
+                    consectetur adipiscing elit&lt;/p&gt;
+```
+# is actually
+```html
+&lt;p&gt;Lorem•ipsum•dolor•••••••sit•amet,\n
+\t\t\t\tconsectetur•adipiscing•elit&lt;/p&gt;\n
+```
+
+---
+
+# Whitespace Characters
+
+- `•` = Space
+- `\t` = Tab
+- `\n` = New Line
+
+---
+class: middle
+
+```html
+&lt;p&gt;Lorem•ipsum•dolor•••••••sit•amet,\n
+\t\t\t\tconsectetur•adipiscing•elit&lt;/p&gt;\n
+```
+# gets converted to
+```html
+&lt;p&gt;Lorem•ipsum•dolor•sit•amet,•consectetur•adipiscing•elit&lt;/p&gt;\n
+```
+
+---
+
+# Code Convention
+
+- Inline Elements stay on the same line
+- Block Level Elements get new lines
+- Child Block Level Elements are indented from their parents
+- Sections, or similar sibling elements, are separated by extra new lines
+
+---
+
+```html
+&lt;div&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, &lt;strong&gt;consectetur&lt;/strong&gt; adipiscing elit&lt;/p&gt;
+  &lt;!-- New Line --&gt;
+  &lt;p&gt;Ut enim ad minim veniam, quis nostrud exercitation ullamco&lt;/p&gt;
+&lt;/div&gt;
+```
+
+---
+class: middle, center
+
+# .eleven[Semantics is not Style]
+
+???
+We already learned this, but let's look at some examples.
+
+---
+class: middle
+
+```html
+&lt;h1&gt;Some Page Heading&lt;/h1&gt;
+&lt;strong&gt;Some Page Heading&lt;/strong&gt;
+```
+
+---
+class: middle, center
+
+![Strong Heading](images/strong-heading.png)
+
+---
+class: middle
+
+```html
+&lt;ol&gt;
+  &lt;li&gt;Thing 1&lt;/li&gt;
+  &lt;li&gt;Thing 2&lt;/li&gt;
+&lt;/ol&gt;
+```
+
+---
+class: middle, center
+
+![Unordered Ordered](images/unordered-ordered.png)
+
+---
+class: middle
+
+```html
+&lt;ul&gt;
+  &lt;li&gt;Some Thing&lt;/li&gt;
+  &lt;li&gt;Other Thing&lt;/li&gt;
+&lt;/ul&gt;
+```
+
+---
+class: middle, center
+
+![Ordered Unordered](images/ordered-unordered.png)
+
+---
+class: middle, center
+
+# Style is CSS
+
+## .eight[The meaning we give to something is different than the visuals we use to convey that meaning.]
+
+---
+class: middle, center
+
+# .eleven[Structure is not Style]
+
+---
+class: middle, center
+
+# CSS has its own idea of Inline and Block
+
+???
+We won't worry about that yet.
+
+---
+class: middle, center
+
+# .eleven[Changing the style doesn't change the category]
+
+It doesn't affect which elements it can contain and which elements it can be contained in.
+
+---
+
+# HTML4 vs HTML5
+
+HTML4: Inline and Block
+
+HTML5: Phrasing and Flow ... and more
+
+[HTML5 Element Categories](https://html.spec.whatwg.org/multipage/indices.html#element-content-categories)
+
+---
+
+# .eight[Lab]
+
+# Let's Plan a Simple Website
+
+---
+
+# .eight[Lab]
+
+- Read through this [MDN Article](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure) on Document and Website Structure.
+- Learn to use the elements listed.
+- Follow the exercises and hand in your work.
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>

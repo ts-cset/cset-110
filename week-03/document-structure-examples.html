@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Document Structure Examples</title>
+
+    <style>
+      section {
+        border: 1px solid #ffb2b6;
+        margin: 2rem;
+        padding: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Document Structure Examples</h1>
+
+    <h2>Inline Elements</h2>
+
+    <h3>Anchors</h3>
+    <section>
+      <a href="#one">Jump to Section One</a>
+      <a href="#two">Jump to Section Two</a>
+    </section>
+
+    <h3>Inputs</h3>
+    <section>
+      <input type="text" placeholder="email">
+      <input type="text" placeholder="password">
+    </section>
+
+
+    <h2>Block Elements</h2>
+
+    <h3>Paragraphs</h3>
+    <section>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+    </section>
+
+    <h3>Divs</h3>
+    <section>
+      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+    </section>
+
+
+    <h2>Nesting Elements</h2>
+
+    <h3>Nested Inline Elements</h3>
+    <section>
+      <p><strong>Don't forget to <a href="#">click here</a></strong></p>
+    </section>
+
+    <h3>Nested Block Elements</h3>
+    <section>
+      <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+      </div>
+    </section>
+
+    <h3>Bad Nesting Example</h3>
+    <section>
+      <a href="#">
+        <h1>My Resume</h1>
+      </a>
+    </section>
+
+
+    <h2>Whitespace</h2>
+    <section>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+      <p>Lorem ipsum dolor      sit amet,
+                          consectetur adipiscing elit</p>
+    </section>
+
+    <h2>Semantics</h2>
+    
+    <h3>Strong that looks like a Heading</h3>
+    <section>
+      <h1>Some Page Heading</h1>
+      <strong style="display:block;font-size:1.5em;font-weight:bold;margin:0.83em 0;">Some Page Heading</strong>
+    </section>
+
+    <h3>Ordered List that looks like an Unordered List</h3>
+    <section>
+      <ol style="list-style-type:disc;">
+        <li>Thing 1</li>
+        <li>Thing 2</li>
+      </ol>
+    </section>
+
+    <h3>Unordered List that looks like an Ordered List</h3>
+    <section>
+      <ul style="list-style-type:decimal;">
+        <li>Some Thing</li>
+        <li>Other Thing</li>
+      </ul>
+    </section>
+
+  </body>
+</html>
