@@ -9,7 +9,6 @@ body {
   color: var(--nord1);
   font-family: Courier, monospace;
   font-size: calc(.75rem + 1.75vw);
-  line-height: 160%;
   margin: 8vw;
 }
 

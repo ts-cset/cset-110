@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project Structure</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../assets/slides.css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center
+
+# Project Structure
+
+---
+class: center
+
+# .eight[Let's talk about Hyperlinks]
+
+---
+
+# Hyperlinks
+
+### Allow us to link our document to any other document
+
+???
+This is what makes the Web, just like your site map yesterday
+
+---
+count: false
+
+# Hyperlinks
+
+### Allow us to link our document to any other ~~document~~ .eight[resource]
+
+???
+This is what makes the Web even better
+
+---
+
+# URLs Can Point To
+
+- HTML files
+- text files
+- image files
+- video files
+- audio files
+- etc.
+
+???
+Directories aren't on this list.
+
+---
+class: center
+
+[BBC Home](http://www.bbc.com/)
+
+![BBC Example](https://mdn.mozillademos.org/files/12405/bbc-homepage.png)
+
+???
+Contains a whole bunch of links to other pages of html, but also a whole bunch of images. Right click one and open it in new tab and that's where that image lives.
+
+---
+
+# URLs within HTML
+
+- `&lt;a href=""&gt;`
+- `&lt;img src=""&gt;`
+- `&lt;form action=""&gt;`
+- `&lt;link href=""&gt;`
+
+---
+class: center
+
+# .eight[All of these URLs are paths to find a file.]
+
+---
+
+# Example Project Structure
+
+```md
+my-website/
+  - index.html
+  - about.html
+  - articles/
+    - index.html
+    - my-latest-article.html
+  - images/
+    - logo.jpg
+```
+
+---
+class: center
+
+# The .eight[root] directory of this project is:
+
+---
+class: center
+count: false
+
+# The .eight[root] directory of this project is:
+
+`my-website`
+
+???
+Usually we name this the same as our site or project name so we don't get confused, and we know that files and directories with spaces are annoying, so we replace them with dashes.
+
+---
+
+# Example Project Structure
+
+```md
+my-website/         <!-- root -->
+  - index.html
+  - about.html
+  - articles/
+    - index.html
+    - my-latest-article.html
+  - images/
+    - logo.jpg
+```
+
+???
+Websites are made of individual pages.
+
+---
+count: false
+
+# Example Project Structure
+
+```md
+my-website/         <!-- root -->
+  - index.html          <!-- page -->
+  - about.html          <!-- page -->
+  - articles/
+    - index.html              <!-- page -->
+    - my-latest-article.html  <!-- page -->
+  - images/
+    - logo.jpg
+```
+
+---
+count: false
+
+# Example Project Structure
+
+```md
+my-website/         <!-- root -->
+  - index.html          <!-- page -->
+  - about.html          <!-- page -->
+  - articles/           <!-- child directories -->
+    - index.html              <!-- page -->
+    - my-latest-article.html  <!-- page -->
+  - images/             <!-- child directories -->
+    - logo.jpg                <!-- asset -->
+```
+
+---
+
+# Hosting
+
+If we had a .eight[server], we would serve the .eight[root] of the project.
+
+```md
+https://my-domain.com/    -&gt;   my-website/
+```
+
+---
+
+# Project Structure is the Same in the URL
+
+```md
+https://my-domain.com/            -&gt;   my-website/
+https://my-domain.com/about.html  -&gt;   my-website/about.html
+https://my-domain.com/articles/   -&gt;   my-website/articles
+```
+
+---
+
+# Index
+
+When an .eight[HTTP] request is made to a URL that points at a directory, like `my-website/`, it will return a default file called the .eight[index].
+
+An index is just the working directory's list of child files and directories.
+
+---
+class: center
+
+![Default Index](images/index.png)
+
+???
+This is configured by your server, but you don't need to know that yet. You need to know what the default behavior is and how to deal with it.
+
+Often, the server is configured to not allow people to view these indexes, that way people can't poke around where they're not supposed to.
+
+---
+
+# Provide Your Own Index
+
+```md
+my-website/         <!-- directory -->
+  - index.html          <!-- index -->
+  - about.html
+  - articles/           <!-- directory -->
+    - index.html              <!-- index -->
+    - my-latest-article.html
+  - images/
+    - logo.jpg
+```
+
+???
+We call these home pages, or landing pages
+
+---
+
+# Moving Between Files
+
+```md
+my-website/
+  - index.html
+  - about.html
+```
+
+The home page might contain a link to go to the about page with:
+```html
+&lt;a href="about.html"&gt;About&lt;/a&gt;
+```
+
+???
+Is this an absolute or a relative link? Why?
+
+---
+
+# Go from Index to the latest article?
+
+```md
+my-website/
+  - index.html
+  - articles/
+    - my-latest-article.html
+```
+---
+count: false
+
+# Go from Index to the latest article?
+
+```md
+my-website/
+  - index.html
+  - articles/
+    - my-latest-article.html
+```
+
+```html
+&lt;a href="articles/my-latest-article.html"&gt;Latest Article&lt;/a&gt;
+```
+
+---
+
+# How do you show your logo on the latest article?
+
+
+```md
+my-website/
+  - articles/
+    - my-latest-article.html
+  - images/
+    - logo.jpg
+```
+
+---
+count: false
+
+# How do you show your logo on the latest article?
+
+
+```md
+my-website/
+  - articles/
+    - my-latest-article.html
+  - images/
+    - logo.jpg
+```
+
+```html
+&lt;img src="../images/logo.jpg"&gt;
+```
+
+---
+
+# Why not absolute links?
+
+- Easier to read your code
+- More efficient for your browser
+
+---
+class: center
+
+# If you want to learn more about the difference between absolute and relative links
+
+# [read this](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#Absolute_versus_relative_URLs)
+
+
+---
+class: center
+
+# [Time for a Lab!](lab_project-structure.html)
+
+
+
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
