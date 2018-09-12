@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Basics</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../assets/slides.css" />
+
+    <style type="text/css">
+      .glowing {
+        animation: glowing 5000ms infinite;
+        animation-timing-function: ease;
+      }
+      @keyframes glowing {
+        0% {
+          color: var(--nord1);
+          font-size: 55px;
+          text-shadow: 0 0 1px var(--nord3);
+          transform: rotate(0deg);
+        }
+        50% {
+          color: var(--nord8);
+          font-size: 250px;
+          text-shadow: 0 0 40px var(--nord3);
+          transform: rotate(360deg);
+        }
+        100% {
+          color: var(--nord1);
+          font-size: 55px;
+          text-shadow: 0 0 1px var(--nord3);
+          transform: rotate(720deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+class: middle, center
+
+# CSS
+
+---
+class: middle, center
+
+<h1 class="glowing">CSS</h1>
+
+---
+class: middle, center
+
+[CSS Zen Garden Examples](http://www.csszengarden.com/)
+
+---
+
+# .eight[Cascading Style Sheets]
+
+- ~~programming language~~
+- ~~markup language~~
+- style sheet language
+- declarative statements about style
+
+---
+count: false
+
+# .eight[Cascading Style Sheets]
+
+- ~~programming language~~
+- ~~markup language~~
+- style sheet language
+- declarative statements about style
+- overriding browser's default style
+
+---
+class: middle
+
+```css
+p {
+  color: red;
+}
+```
+
+---
+class: middle, center
+
+# .fourteen[But where do we write it?]
+
+
+---
+
+# Inline Style
+
+```html
+&lt;body&gt;
+  &lt;p style="color: red;"&gt;red paragraph&lt;/p&gt;
+&lt;/body&gt;
+```
+
+---
+
+# Internal Stylesheet
+
+```html
+&lt;head&gt;
+  &lt;style type="text/css"&gt;
+    p {
+      color: red;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+```
+---
+
+# External Stylesheet
+
+```html
+&lt;head&gt;
+  &lt;link href="styles.css" rel="stylesheet" type="text/css"&gt;
+&lt;/head&gt;
+```
+
+---
+class: middle, center
+
+# Unix Philosophy
+
+.eight[Do one thing well.]
+
+---
+class: middle, center
+
+# .eleven[Always use External Stylesheets.]
+
+---
+class: middle, center
+
+![Anatomy of a CSS Ruleset](https://mdn.mozillademos.org/files/9461/css-declaration-small.png)
+
+# Anatomy of a .eight[Ruleset]
+
+---
+
+# .eight[Selector]
+
+Pattern at the start of the ruleset by which the browser will match, or select, all the elements that should be styled by the rulset.
+
+---
+
+# .eight[Declaration]
+
+A single rule specifying a value for an element's property.
+
+---
+
+# .eight[Properties]
+
+All of the attributes on a given element that you can style.
+
+---
+
+# .eight[Property Values]
+
+All of the possible appearances for a given property.
+
+---
+
+# CSS Syntax
+
+- Each ruleset is wrapped in curly braces: `{}`
+- Separate the property from its value(s) with a colon: `:`
+- Separate each declaration with a semicolon: `;`
+
+---
+
+# Multiple Declarations
+
+```css
+p {
+  color: red;
+  width: 500px;
+  border: 1px solid black;
+}
+```
+
+---
+
+# Multiple Selectors
+
+```css
+p, a, h1 {
+  color: red;
+}
+```
+
+---
+class: middle, center
+
+# .fourteen[So how do I style _some_ of my paragraphs?]
+
+???
+There's different selector types.
+
+---
+
+# .eight[Element Selector]
+
+All HTML elements of the specified type.
+
+```css
+p {...}
+```
+Selects all `&lt;p&gt;` elements.
+
+---
+
+# .eight[ID Selector]
+
+The single element on the page with the specified ID.
+
+```css
+#my-id {...}
+```
+Selects `&lt;p id="my-id"&gt;` _or_ `&lt;a id="my-id"&gt;`
+
+---
+
+# .eight[Class Selector]
+
+All elements on the page with the specified class.
+
+```css
+.my-class {...}
+```
+Selects `&lt;p class="my-class"&gt;` _and_ `&lt;a class="my-class"&gt;`
+
+---
+
+# .eight[Attribute Selector]
+
+All elements on the page with the specified attribute
+
+```css
+img[alt] {...}
+```
+Selects `&lt;img src="logo.jpg" alt="Some Alt Text"&gt;` but _not_ `&lt;img src="logo.jpg"&gt;`
+
+---
+
+# .eight[Attribute Selector]
+
+...or attribute value
+
+```css
+input[type="radio"] {...}
+```
+Selects `&lt;input type="radio"&gt;` but _not_ `&lt;input type="text"&gt;`
+
+---
+
+# .eight[Pseudo-class Selector]
+
+The specified element, but only when it's in the specified state.
+
+```css
+a:hover {...}
+```
+
+Selects `&lt;a&gt;` but only when the cursor is hovering over the link.
+
+---
+
+# Advanced Topic
+
+[Learn More Selector Types](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors)
+
+- Pseudo-elements
+- Combinators
+- etc.
+
+---
+
+# .eight[Comments]
+
+```css
+/*
+Anything here is
+ignored by the browser
+*/
+
+p {
+  color: red; /* same here! */
+}
+```
+
+---
+
+# Try it!
+
+- Open your HTML Resume and style it
+- Add a `&lt;link&gt;` to an external stylesheet
+- Start adding some rulesets:
+  - `color: blue;`
+  - `font-size: 60px;`
+  - `text-align: center;`
+  - `letter-spacing: 2px;`
+
+---
+class: middle, center
+
+# CSS Layout
+
+.eight[Setting size, color, position, etc. on a series of boxes.]
+
+???
+Block and Inline
+
+---
+
+class: center
+
+# Box Model
+
+![Box Model Diagram](https://mdn.mozillademos.org/files/9443/box-model.png)
+
+---
+
+# Try It!
+
+- See which elements can follow these rules:
+  - `padding: 10px;`
+  - `margin: 2em;`
+  - `border: 1px solid red;`
+- See what happens when you use these rules:
+  - `width: 50%;`
+  - `background-color: lightblue;`
+  - `display: block;`
+
+---
+
+# Advanced Topic
+
+Which units can I use and when?
+
+[CSS Values and Units](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Values_and_units)
+
+---
+
+# Advanced Topic
+
+That declaration for border had a few values. How did that work?
+
+[CSS Shorthand Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties)
+
+---
+
+# So Many Properties!
+
+[MDN's CSS Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
+
+---
+class: center, middle
+
+# If you want to practice this again
+
+[MDN CSS Basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
+
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
