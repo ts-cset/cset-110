@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Lab: CSS Positioning</title>
+
+    <link href="lab_css-positioning.css" rel="stylesheet" type="text/css" />
+
+    <!-- Add your external stylesheet on the line below -->
+    <link href="path/to/your/stylesheet.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body id="top">
+    <h1>CSS Positioning</h1>
+
+    <article>
+      <h2>Display</h2>
+
+      <section id="display-01">
+        <div>one</div>
+        <div>two</div>
+        <div>three</div>
+      </section>
+
+      <ul>
+        <li>Get the divs to be on a single line.</li>
+        <li>Surround each div with a thin blue line.</li>
+        <li>Separate each div by 20 pixels.</li>
+      </ul>
+
+      <section id="display-02">
+        <span>one</span>
+        <span>two</span>
+        <span>three</span>
+      </section>
+
+      <ul>
+        <li>Get the spans to be on separate lines.</li>
+        <li>Surround each span with a thin red line.</li>
+        <li>Each span should be as wide as the container.</li>
+      </ul>
+
+      <section id="display-03">
+        <div>one</div>
+        <div>two</div>
+        <div>three</div>
+      </section>
+
+      <ul>
+        <li>Get the divs to be on a single line.</li>
+        <li>Surround each div with a thin green line.</li>
+        <li>Make each div be a square.</li>
+      </ul>
+
+      <section id="display-04">
+        <div>I should be hidden.</div>
+        <div>I should be showing.</div>
+      </section>
+      
+      <ul>
+        <li>Don't display the first div.</li>
+        <li>But display the second. (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-of-type" target="_blank">hint</a>)</li>
+      </ul>
+
+      <section id="display-05">
+        <a href="#">click me</a>
+      </section>
+
+      <ul>
+        <li>Make this link be half as wide as the container.</li>
+        <li>Add a background to make it look like a rectangular button.</li>
+        <li>Add some padding to make it taller.</li>
+        <li>Then center the rectangle in the middle of the container using fluid margins.</li>
+      </ul>
+    </article>
+
+    <article>
+      <h2>Box Model</h2>
+
+      <section id="boxmodel-01">
+        <div>Default Content Box Model</div>
+      </section>
+
+      <ul>
+        <li>Make this div be half as wide as the container and centered with margins.</li>
+        <li>Then add a lot of padding and a thick border.</li>
+        <li>Notice how the content is half the width of the container, but the padding and border have added on to it and the whole thing is more than half of the container's width.</li>
+      </ul>
+
+      <section id="boxmodel-02">
+        <div>Border Box Model</div>
+      </section>
+
+      <ul>
+        <li>Add the same declarations for width, padding, border, and margin to this block.</li>
+        <li>Without altering those declarations, add a new declaration to change the box model. (<a href="http://www.url.com" target="_blank">hint</a>)</li>
+        <li>Your entire box, including border and padding, should now be half the container's width.</li>
+      </ul>
+    </article>
+
+    <article>
+      <h2>Float</h2>
+
+      <section id="float-01">
+        <img src="http://placekitten.com/100/100" alt="Kitten Placeholder"/>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+          tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+          vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+          no sea takimata sanctus est. Lorem ipsum dolor sit amet, consetetur sadipscing
+          elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+          erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+          Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        </p>
+      </section>
+
+      <ul>
+        <li>Make the image float to the left of the paragraph.</li>
+        <li>The text of the paragraph should wrap around the image.</li>
+        <li>Add margin to all but the left side to align the image with the top of the text and also to provide some visual space between the two elements.</li>
+      </ul>
+
+      <section id="float-02">
+        <img src="http://placekitten.com/100/100" alt="Kitten Placeholder"/>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+          tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+          vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+          no sea takimata sanctus est. Lorem ipsum dolor sit amet, consetetur sadipscing
+          elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+          erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+          Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        </p>
+      </section>
+
+      <ul>
+        <li>Do the same thing as before, but float the image to the right.</li>
+        <li>Make sure you switch the margin, too.</li>
+        <li>Now justify your text to show a cleaner space between the text and the image.</li>
+      </ul>
+
+      <section id="float-03">
+        <img src="http://placekitten.com/100/100" alt="Kitten Placeholder"/>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+          tempor invidunt ut labore et dolore.
+        </p>
+        <p class="clear">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+          tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+          vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+          no sea takimata sanctus est.
+        </p>
+      </section>
+
+      <ul>
+        <li>Float the image to the left and add margin to all four sides this time.</li>
+        <li>But this time, I want you to clear the float so that the second paragraph starts below the image and doesn't wrap around it.</li>
+      </ul>
+
+      <section id="float-04">
+        <div>
+          <img src="http://placekitten.com/100/100" alt="Kitten Placeholder"/>
+          <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+            tempor invidunt ut labore et dolore.
+          </p>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+          tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+          vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+          no sea takimata sanctus est.
+        </p>
+      </section>
+
+      <ul>
+        <li>Float the image to the left and add margin to all four sides again.</li>
+        <li>Add a light blue background to the div to separate the image and paragraph within from the rest of the content.</li>
+        <li>Now we have two problems. First, the paragraph margin overflows the div but the image margin does not. And second, the div's background doesn't contain the image since we pulled it out of normal flow.</li>
+        <li>Read up on some examples of the clearfix hack, <a href="https://css-tricks.com/snippets/css/clear-fix/" target="_blank">here</a> or <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Floats#The_clearfix_hack" target="_blank">here</a>, and use one of them to fix both problems at once.</li>
+      </ul>
+
+      <section id="float-05">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at porttitor quam. Aenean sem urna, sollicitudin sed aliquet non, fermentum vitae ipsum. Proin et consectetur sapien, a elementum dolor. Praesent convallis, lorem vel consectetur lobortis, leo arcu egestas diam, iaculis vehicula orci turpis at ligula. Sed lacinia ante metus, vitae tincidunt turpis tristique posuere. Nulla scelerisque risus a augue dignissim, sed pulvinar libero maximus. Ut ullamcorper eget ante nec varius. Nam non mollis lacus. Nulla interdum, risus id ultrices porttitor, quam mi cursus ex, eu malesuada eros ligula at quam. Maecenas in libero lectus. Vivamus vitae nunc vitae sapien interdum blandit.
+        </p>
+        <p>
+          Duis non orci erat. Integer cursus placerat consequat. Praesent malesuada commodo porta. Phasellus finibus, metus ut efficitur aliquam, arcu turpis euismod lectus, ut auctor sapien nisi id nisi. Sed tristique felis vel ex lacinia iaculis. Aliquam mi eros, finibus sit amet felis quis, pulvinar interdum leo. Vestibulum ut massa faucibus magna maximus aliquam. Aenean iaculis sem tellus, ac mattis orci euismod sed. Maecenas sed finibus nulla, sit amet aliquet est. Phasellus vel ante vitae magna semper semper. Nulla posuere est finibus viverra semper. Nulla non commodo tellus. Donec dapibus erat quis nunc auctor, nec iaculis mauris vulputate. Phasellus in sapien feugiat, condimentum mi ut, egestas nisi.
+        </p>
+      </section>
+
+      <ul>
+        <li>Use floats to create a two column layout for these paragraphs.</li>
+        <li>Separate the paragraphs with some padding and a single vertical border between the two.</li>
+      </ul>
+
+      <section id="float-06">
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at porttitor quam. Aenean sem urna, sollicitudin sed aliquet non, fermentum vitae ipsum. Proin et consectetur sapien, a elementum dolor. Praesent convallis, lorem vel consectetur lobortis, leo arcu egestas diam, iaculis vehicula orci turpis at ligula. Sed lacinia ante metus, vitae tincidunt turpis tristique posuere. Nulla scelerisque risus a augue dignissim, sed pulvinar libero maximus. Ut ullamcorper eget ante nec varius. Nam non mollis lacus. Nulla interdum, risus id ultrices porttitor, quam mi cursus ex, eu malesuada eros ligula at quam. Maecenas in libero lectus. Vivamus vitae nunc vitae sapien interdum blandit.
+          </p>
+          <p>
+            Duis non orci erat. Integer cursus placerat consequat. Praesent malesuada commodo porta. Phasellus finibus, metus ut efficitur aliquam, arcu turpis euismod lectus, ut auctor sapien nisi id nisi. Sed tristique felis vel ex lacinia iaculis. Aliquam mi eros, finibus sit amet felis quis, pulvinar interdum leo. Vestibulum ut massa faucibus magna maximus aliquam.
+          </p>
+        </div>
+        <p>
+          Praesent et libero sit amet sem rutrum sollicitudin a vulputate est. Suspendisse potenti. In ac consectetur eros. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin vel pretium ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas sed odio vehicula mi tempus rhoncus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vulputate commodo lectus, sed vulputate massa congue ac. Curabitur eget tellus eget urna interdum bibendum nec eget mauris. Donec euismod a nulla nec semper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas ut ipsum orci. Etiam iaculis eleifend nisi eget laoreet. Integer molestie arcu at erat lacinia gravida. Maecenas hendrerit nec metus sit amet sagittis.
+        </p>
+      </section>
+
+      <ul>
+        <li>Create another two column layout for the paragraphs within the div with the same padding and border.</li>
+        <li>Use your clearfix hack from before to prevent the third paragraph from creeping up into your floated columns.</li>
+      </ul>
+    </article>
+
+    <article>
+      <h2>Position</h2>
+
+      <section id="position-01">
+        <div>one</div>
+        <div>two</div>
+        <div>three</div>
+        <div>four</div>
+        <div>five</div>
+        <div>six</div>
+      </section>
+
+      <ul>
+        <li>Make all these divs into red squares using width, height, and background.</li>
+        <li>Then, combine the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child" target="_blank"><code>:nth-child</code></a> selector and relative positioning to offset the even divs to the right to make a checkerboard pattern.</li>
+      </ul>
+
+      <section id="position-02">
+        <div>
+          <span>one</span>
+          <span>two</span>
+          <span>three</span>
+          <span>four</span>
+        </div>
+      </section>
+
+      <ul>
+        <li>Add a thin border to the div so we can see its dimensions.</li>
+        <li>Use absolute positioning and offsets to place each span in a corner of <strong>the section element</strong> going clockwise starting from the top left.</li>
+        <li>Your spans should have been pulled outside of your div, which should look like a solid line since there's no height to separate the top and bottom borders.</li>
+      </ul>
+
+      <section id="position-03">
+        <div>
+          <span>one</span>
+          <span>two</span>
+          <span>three</span>
+          <span>four</span>
+        </div>
+      </section>
+
+      <ul>
+        <li>Add the same border to your div, but this time add height of 100 pixels.</li>
+        <li>Now, use absolute positioning to place each span in a corner of <strong>the div</strong> going clockwise starting from the top left.</li>
+        <li>Remember that absolutely positioned elements are placed relative to their <em>containing element</em>. (<a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning#Positioning_contexts" target="_blank">hint</a>)</li>
+      </ul>
+
+      <section id="position-04">
+        <div>I'm out of order!</div>
+      </section>
+
+      <ul>
+        <li>Use absolute positioning to place this div at the very top of the page, somewhere near the title of "CSS Positioning". If you can't get it, reread the hint above.</li>
+        <li>If you did it correctly, you should see this section's label disappear. That's because I was using absolute and relative positioning. If <em>every</em> section label disappeared, you should be more specific with your selector. The other sections need to retain their relative positioning for their internal layouts to work.</li>
+      </ul>
+
+      <section id="position-05">
+        <div class="outer-box">
+          <div class="inner-box">&nbsp;</div>
+        </div>
+        <div class="outer-box">
+          <div class="inner-box">&nbsp;</div>
+        </div>
+      </section>
+
+      <ul>
+        <li>Make each outer box a 4rem by 4rem light gray square.</li> 
+        <li>Make each inner box a 1rem by 1rem dark gray square.</li> 
+        <li>Position each outer box to opposite sides of the section.</li>
+        <li>Position each inner box to be centered within its outer box. (You might have to do some math.)</li>
+        <li>You shouldn't be using any padding or margin for this one!</li>
+      </ul>
+
+      <section id="position-06">
+        <div>&nbsp;</div>
+      </section>
+
+      <ul>
+        <li>Give this empty div a lavender background. You won't see it yet since it doesn't have any dimensions.</li>
+        <li>Without setting width, height, padding, or margin, try to use positioning and offsets to stretch your div to cover the entire section with lavender.</li>
+      </ul>
+
+      <section id="position-07">
+        <a href="#top">Scroll To Top</a>
+      </section>
+
+      <ul>
+        <li>Use fixed positioning to affix this link to the bottom right corner of the scrolling window.</li>
+        <li>Give it a background color and some padding so you can't see through it to the other elements.</li>
+        <li>Then use margin or change your offsets to add some extra space around the rectangle so it's not so cramped in the corner.</li>
+        <li>Look up the <code>:hover</code> psuedo class to change the background color when your cursor is over the rectangle.</li>
+      </ul>
+    </article>
+
+    <article>
+      <h2>Layout</h2>
+
+      <section id="layout">
+        <div id="wrapper">
+          <nav>
+            <a href="#">nav item</a>
+            <a href="#">nav item</a>
+            <a href="#">nav item</a>
+            <a href="#">nav item</a>
+          </nav>
+        
+          <aside>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sagittis posuere condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris vitae mollis dui. Praesent porttitor quam lorem. Phasellus ullamcorper ligula vitae augue eleifend faucibus. Donec elementum nulla eu erat feugiat nec bibendum purus facilisis. Vestibulum tincidunt, lectus sed tristique condimentum, odio justo faucibus diam, sed imperdiet metus dui non augue. Ut felis enim, accumsan id tempor vitae, rutrum ut sem. Maecenas pulvinar bibendum lectus vel malesuada. Duis sodales ultricies congue. Maecenas id diam neque. Fusce ac interdum felis. Donec dictum massa eu enim aliquam rhoncus. Donec in dui diam. Aenean nisl risus, iaculis in convallis eu, condimentum a metus. Fusce ut purus odio. Curabitur vitae enim id nisl dignissim varius vitae vel dui. Aenean scelerisque ante vitae quam tempor non dignissim mauris venenatis.</p>
+          </aside>
+
+          <main>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sagittis posuere condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris vitae mollis dui. Praesent porttitor quam lorem. Phasellus ullamcorper ligula vitae augue eleifend faucibus. Donec elementum nulla eu erat feugiat nec bibendum purus facilisis. Vestibulum tincidunt, lectus sed tristique condimentum, odio justo faucibus diam, sed imperdiet metus dui non augue. Ut felis enim, accumsan id tempor vitae, rutrum ut sem. Maecenas pulvinar bibendum lectus vel malesuada. Duis sodales ultricies congue. Maecenas id diam neque. Fusce ac interdum felis. Donec dictum massa eu enim aliquam rhoncus. Donec in dui diam. Aenean nisl risus, iaculis in convallis eu, condimentum a metus. Fusce ut purus odio. Curabitur vitae enim id nisl dignissim varius vitae vel dui. Aenean scelerisque ante vitae quam tempor non dignissim mauris venenatis.</p>
+            
+            <p>Proin eleifend ornare gravida. Donec nunc ipsum, luctus eget iaculis sit amet, laoreet quis nisl. Curabitur euismod rutrum ornare. Morbi viverra rutrum purus non ullamcorper. Quisque sollicitudin elementum leo at lobortis. Vivamus nec dolor augue, sit amet blandit urna. Curabitur vitae elit id sem blandit tincidunt. Fusce aliquam sodales mauris vitae molestie. Aenean sit amet ligula sapien. Donec luctus ultrices condimentum. Fusce ac velit odio, sed luctus libero. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce orci neque, commodo quis dictum et, interdum vel diam. Curabitur congue, leo non commodo facilisis, quam magna rutrum enim, non malesuada dui mi vitae risus.</p>
+            
+            <p>Suspendisse pellentesque mattis orci, non euismod dui pellentesque eget. Fusce posuere nisl in ligula interdum eget dapibus sem malesuada. Etiam eu ullamcorper neque. Maecenas eget sapien augue. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc felis diam, dictum ornare laoreet eget, semper sit amet arcu. Suspendisse ut pulvinar nisl. Quisque congue sem vel purus pharetra blandit. Praesent eget ante risus. Donec metus dui, molestie ac elementum et, fermentum nec ipsum.</p>
+            
+            <p>Quisque ipsum lacus, ultricies a convallis quis, dictum in ipsum. Nam sit amet sem et diam tristique sagittis. Sed mi augue, mattis nec ornare euismod, pharetra vitae ante. Aenean sed augue turpis. Cras tincidunt sollicitudin lectus quis posuere. Vivamus vel eleifend purus. Nulla venenatis pharetra mi, nec pellentesque augue dapibus eget. Aliquam erat volutpat. Etiam eleifend tincidunt sem vitae ultricies. Suspendisse malesuada varius turpis eget sollicitudin. Etiam semper magna eu tellus dignissim vitae rutrum felis porta. Maecenas consectetur tempor arcu. Sed a facilisis elit. Quisque ac diam elit, nec condimentum lectus. Phasellus leo ligula, viverra ut venenatis non, blandit in orci. Suspendisse euismod leo at velit pharetra non congue augue semper. Cras vitae tortor massa.</p>
+            
+            <p>Suspendisse pellentesque mattis orci, non euismod dui pellentesque eget. Fusce posuere nisl in ligula interdum eget dapibus sem malesuada. Etiam eu ullamcorper neque. Maecenas eget sapien augue. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc felis diam, dictum ornare laoreet eget, semper sit amet arcu. Suspendisse ut pulvinar nisl. Quisque congue sem vel purus pharetra blandit. Praesent eget ante risus. Donec metus dui, molestie ac elementum et, fermentum nec ipsum.</p>
+          </main>
+            
+          <footer>
+            Copyright &copy; 2018 - Acme Web Sites
+          </footer>
+        </div>
+      </section>
+
+      <ul>
+        <li>Time to put it all together! Use what you know of display, dimensions, floats, and positioning to lay out a generic website within this section.</li>
+        <li>Your page should look something like <a href="https://alistapart.com/d/css-positioning-101/example_j.html" target="_blank">this</a>. First, try to recreate this exactly. Then you can play around with it to see what other layouts you can make.</li>
+      </ul>
+    </article>
+  </body>
+</html>
