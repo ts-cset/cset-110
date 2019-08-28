@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Day 01: What's the Internet?</title>
+    <title>HTML Basics</title>
     <meta charset="utf-8">
 
     <link rel="stylesheet" href="../assets/slides.css" />
@@ -20,10 +20,24 @@ class: middle
 
 ---
 
+# Today's Goal
+
+To create our first HTML document and learn how to use some common tags.
+
+---
+
+class: middle, center
+
 ![A Letter by Einstein](https://upload.wikimedia.org/wikipedia/commons/f/f7/Einstein_Szilard_p1.jpg)
 
 ???
 What is this? A letter. You know because you've learned this, you've seen plenty of them before.
+
+---
+
+class: middle, center
+
+![A Letter in Mandarin](images/letter-mandarin.png)
 
 ---
 
@@ -38,6 +52,8 @@ count: false
 - Greeting
 - Body
 - Salutation
+
+The envelope has other parts: to address, from address, stamp, etc.
 
 ???
 You also know this, because you learned this.
@@ -79,18 +95,99 @@ What do you think? Why would a computer need to know the parts of a letter?
 ---
 class: middle, center
 
-# Unlike paper, the computer stores the letter data AND has to display it.
+# Paper stores and displays data in written language.
 
-???
-Those two things are separate actions.
+# But a web page stores data in binary.
 
 ---
 class: middle, center
 
+# .eight[Syntax]
+
+## vs
+
 # .eight[Semantics]
 
-???
-Philosophic question about what a thing is. Not what it is made of. Not how it is used. But why it exists.
+---
+
+class: middle, center
+
+<img alt="Yoda Quote" src="https://i.imgur.com/duxwrb3.jpg" width="100%"/>
+
+---
+
+class: middle, center
+
+<img alt="Chomsky Quote" src="https://quotefancy.com/media/wallpaper/3840x2160/376737-Noam-Chomsky-Quote-Colorless-green-ideas-sleep-furiously.jpg" width="100%"/>
+
+---
+
+# Two Ways To Be Correct
+
+- Syntactically: we've followed the rules of the language
+- Semantically: we've properly communicated our meaning
+
+---
+
+class: middle
+
+<table class="align-center">
+  <thead>
+    <tr>
+      <th class="empty"></th>
+      <th>Incorrect<br />Syntax</th>
+      <th>Correct<br />Syntax</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th class="x-heading">Incorrect<br />Semantics</th>
+      <td class="eleven">X</td>
+      <td class="eleven">X</td>
+    </tr>
+    <tr>
+      <th class="x-heading">Correct<br />Semantics</th>
+      <td class="eleven">X</td>
+      <td class="fourteen">√</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+# Forget About Rules For A Second
+
+```sh
+$ cd ~/Desktop
+$ echo "Hello World" &gt; hello.html
+```
+
+---
+
+# How To Handle HTML Files?
+
+1. Right click the HTML file
+2. Click "Get Info"
+3. In the "Open With" section, select "Google Chrome"
+4. Then click "Change All..." button
+
+---
+
+# Your First Web Page!  :D
+
+Now you can double-click your file and open it in Chrome!
+
+p.s. - you can also use .eight[open hello.html] in your terminal
+
+---
+
+# But It's Wrong   :(
+
+Syntactically?
+
+or
+
+Semantically?
 
 ---
 
@@ -100,6 +197,8 @@ Philosophic question about what a thing is. Not what it is made of. Not how it i
 - A specification is an agreed upon way for:
   - You to write it 
   - Browsers to display it
+
+The translation of code to its display is called .eight[rendering].
 
 ---
 
