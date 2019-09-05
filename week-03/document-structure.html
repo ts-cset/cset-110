@@ -140,11 +140,6 @@ class: middle, center
 ---
 class: middle, center
 
-![Wooden Block Tower](https://target.scene7.com/is/image/Target/50105237_Alt01?wid=488&hei=488&fmt=pjpeg)
-
----
-class: middle, center
-
 # Let's make a list!
 
 ---
@@ -188,6 +183,8 @@ output:
 ---
 class: middle, center
 
+A good guideline:
+
 # .eleven[Never] Nest Block Elements Inside Inline Elements
 
 ---
@@ -201,6 +198,12 @@ class: middle
 
 ???
 Now you might be noticing a trend with these code samples. Sometimes I have tags indented on new lines and sometimes I don't.
+
+---
+
+# When in doubt, check the docs!
+
+<img alt="MDN's reference page shows the permitted content" src="images/permitted-content.png" width="80%" />
 
 ---
 class: middle
@@ -232,8 +235,8 @@ class: middle
 ```
 # is actually
 ```html
-&lt;p&gt;Lorem•ipsum•dolor•••••••sit•amet,\n
-\t\t\t\tconsectetur•adipiscing•elit&lt;/p&gt;\n
+&lt;p&gt;Lorem•ipsum•dolor•••••••sit•amet,↵
+⇒⇒⇒⇒consectetur•adipiscing•elit&lt;/p&gt;↵
 ```
 
 ---
@@ -241,15 +244,15 @@ class: middle
 # Whitespace Characters
 
 - `•` = Space
-- `\t` = Tab
-- `\n` = New Line
+- `⇒` = Tab (also .eight[\t])
+- `↵` = New Line (also .eight[\n])
 
 ---
 class: middle
 
 ```html
-&lt;p&gt;Lorem•ipsum•dolor•••••••sit•amet,\n
-\t\t\t\tconsectetur•adipiscing•elit&lt;/p&gt;\n
+&lt;p&gt;Lorem•ipsum•dolor•••••••sit•amet,↵
+⇒⇒⇒⇒consectetur•adipiscing•elit&lt;/p&gt;↵
 ```
 # gets converted to
 ```html
@@ -263,7 +266,7 @@ class: middle
 - Inline Elements stay on the same line
 - Block Level Elements get new lines
 - Child Block Level Elements are indented from their parents
-- Sections, or similar sibling elements, are separated by extra new lines
+- Similar sibling elements are separated by extra new lines
 
 ---
 
