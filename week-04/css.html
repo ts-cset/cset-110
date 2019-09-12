@@ -218,6 +218,17 @@ Selects all `&lt;p&gt;` elements.
 
 ---
 
+# .eight[Class Selector]
+
+All elements on the page with the specified class.
+
+```css
+.my-class {...}
+```
+Selects `&lt;p class="my-class"&gt;` _and_ `&lt;a class="my-class"&gt;`
+
+---
+
 # .eight[ID Selector]
 
 The single element on the page with the specified ID.
@@ -227,16 +238,7 @@ The single element on the page with the specified ID.
 ```
 Selects `&lt;p id="my-id"&gt;` _or_ `&lt;a id="my-id"&gt;`
 
----
-
-# .eight[Class Selector]
-
-All elements on the page with the specified class.
-
-```css
-.my-class {...}
-```
-Selects `&lt;p class="my-class"&gt;` _and_ `&lt;a class="my-class"&gt;`
+.eleven[Do NOT overuse.]
 
 ---
 
@@ -299,22 +301,25 @@ p {
 
 ---
 
-# Try it!
+# Comments for Organizing
 
-- Open your HTML Resume and style it
-- Add a `&lt;link&gt;` to an external stylesheet
-- Start adding some rulesets:
-  - `color: blue;`
-  - `font-size: 60px;`
-  - `text-align: center;`
-  - `letter-spacing: 2px;`
+```css
+/***** GENERAL *****/
+...
+
+/***** HEADER *****/
+...
+
+/***** NAVIGATION *****/
+...
+```
 
 ---
 class: middle, center
 
 # CSS Layout
 
-.eight[Setting size, color, position, etc. on a series of boxes.]
+.eight[Setting size, shape, position, etc. on a series of boxes.]
 
 ???
 Block and Inline
@@ -363,12 +368,14 @@ That declaration for border had a few values. How did that work?
 [MDN's CSS Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
 
 ---
-class: center, middle
 
-# If you want to practice this again
+# .fourteen[More Practice]
 
-[MDN CSS Basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
+[MDN Styling Text](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text)
 
+- Fundamental text and font styling
+- Styling lists
+- Styling links
 
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
