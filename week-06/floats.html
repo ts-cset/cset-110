@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Floats</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../assets/slides.css" />
+    <style type="text/css">
+      .space-below {
+        margin-bottom: 20px;
+      }
+      .inline {
+        border: 1px solid blue;
+        display: inline;
+      }
+      .block {
+        border: 1px solid red;
+        display: block;
+      }
+      .inline-block {
+        border: 1px solid green;
+        display: inline-block;
+      }
+      a.inline, a.block, a.inline-block {
+        color: blue;
+      }
+      a.inline:hover, a.block:hover, a.inline-block:hover {
+        color: red;
+      }
+      .full-width {
+        width: 100%;
+      }
+      .half-width {
+        width: 50%;
+      }
+      .third-width {
+        width: 30%;
+      }
+      .large-height {
+        height: 5rem;
+      }
+      .full-height {
+        height: 100%;
+      }
+      .half-height {
+        height: 50%;
+      }
+      code.remark-inline-code {
+        line-height: 1.75;
+      }
+      .centered-block {
+        border: 1px solid red;
+        display: block;
+        margin: 0 auto;
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+class: middle, center
+
+# Floats
+
+---
+
+# Layouts with Float?
+
+[MDN: Floats](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Floats)
+
+- Originally, just for floating images and having text wrap around it
+- We hacked it to float everything, creating multi-column layouts
+- CSS3 gave us some new layout options
+- Now floats are back to their original purpose: images
+
+---
+
+# Remember, CSS is a Spec
+
+- CSS3 is newest version, broken into modules
+- Meaning old specs have changed or aren't used anymore
+- Also, new specs might not work everywhere:
+
+Check [caniuse.com](https://caniuse.com)
+
+---
+class: middle, center
+
+And even if it's supported in a browser, it might not look the same...
+
+# [The div that looks different in every browser](https://twitter.com/Martijn_Cuppens/status/1015169981368225793)
+
+---
+
+# Why learn legacy CSS?
+
+1. You will definitely still see it.
+2. You might have to support a legacy browser.
+3. You might have to update a legacy project.
+
+---
+class: middle, center
+
+# [MDN: Legacy Layout Methods](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Legacy_Layout_Methods)
+
+---
+
+# Floating Content
+
+- Original use case
+- Usually images
+
+![Floating images diagram on CSS-Tricks](https://css-tricks.com/wp-content/csstricks-uploads/web-text-wrap.png)
+
+---
+
+# Floating Sidebar
+
+- Left + Left?
+- Left + Right?
+- Right + Left?
+- Right + Right?
+
+# [Codepen Example](https://codepen.io/zachfedor/pen/MWgLxoG?editors=1100)
+
+---
+
+# Floating Columns
+
+- Horizontally stacking blocks within a container
+- Can be any element, usually block level elements
+- Don't forget `box-sizing: border-box;` to make math easier
+
+# [Codepen Example](https://codepen.io/zachfedor/pen/aboXMpP?editors=1100#0)
+
+---
+
+# .fourteen[Exercise]
+
+# [Interneting Is Hard: Floats](https://internetingishard.com/html-and-css/floats/)
+
+---
+
+# More Resources:
+
+- [CSS-Tricks: All About Floats](https://css-tricks.com/all-about-floats/)
+- [A List Apart: CSS Floats 101](https://alistapart.com/article/css-floats-101/)
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
