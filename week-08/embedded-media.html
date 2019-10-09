@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Embedded Media</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../assets/slides.css" type="text/css" />
+
+    <style type="text/css" media="screen">
+      .skinny {
+        width: 128px;
+        height: 256px;
+      }
+      .squat {
+        width: 256px;
+        height: 128px;
+      }
+      small {
+        font-size: 0.7rem;
+        color: #aaa;
+      }
+      .small-svg {
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+class: middle, center
+
+# Embedded Media
+
+---
+
+# Agenda:
+
+- [object](#object)
+- [image](#image)
+- [picture](#picture)
+- [audio](#audio)
+- [video](#video)
+- [iframe](#iframe)
+- [canvas](#canvas)
+
+---
+name: object
+
+# `&lt;object&gt;`
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/object)
+
+- Represents an .eight[external resource]
+- Needs .eight[data] attribute to point at source, like .eight[src] or .eight[href]
+- Needs .eight[type] attribute to clarify what source is, like `&lt;link&gt;` element
+
+---
+
+# Example
+
+```html
+&lt;object type="application/pdf"
+    data="../cset-110_syllabus.pdf"
+    width="100%"
+    height="60%"&gt;
+&lt;/object&gt;
+```
+
+---
+
+# Example
+
+<object type="application/pdf"
+    data="../cset-110_syllabus.pdf"
+    width="100%"
+    height="60%">
+</object>
+
+---
+
+# Things to Think About
+
+- Mostly used for embedding Flash or PDFs
+- Very dependent on device, test everywhere
+- There are better elements for specific purposes
+
+---
+name: image
+
+# `&lt;img&gt;`
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img)
+
+- Embeds a raster or vector image file
+- Needs .eight[src] attribute to point at file
+- Should have .eight[alt] attribute in case image isn't embedded
+- [Lots of supported formats](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Supported_image_formats)
+
+---
+
+# Raster Example
+
+```html
+&lt;img src="media/mario.png" alt="8-bit Mario" /&gt;
+```
+
+<img src="media/mario.png" alt="8-bit Mario" />
+
+---
+
+# Bad Raster Examples
+
+<img class="skinny" src="media/mario.png" alt="8-bit Mario" />
+<img class="squat" src="media/mario.png" alt="8-bit Mario" />
+
+---
+
+# Vector Example
+
+```html
+&lt;img src="media/laptop.svg" alt="Laptop icon" /&gt;
+```
+
+<img class="small-svg" src="media/laptop.svg" alt="Laptop icon" />
+
+<small>Icon made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></small>
+
+---
+
+# Srcset Example
+
+[MDN example](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Using_the_srcset_and_sizes_attributes)
+
+---
+
+# Things to Think About
+
+- Images are .eight[replaced elements], meaning you can only style the box that contains them
+- Default to `display: inline;` with width and height determined by the file
+- Unlike other inline elements, you can set block properties like width or margin.
+- Format matters: PNGs can have transparency, GIFs can loop, etc.
+
+---
+name: picture
+
+# `&lt;picture&gt;`
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
+
+- Contains optional `&lt;source&gt;` elements and one `&lt;img&gt;` element
+- Provides different images for different scenarios
+- Img element is fallback for old browsers
+- Source element can use media queries to check browser size and capability
+
+---
+
+# Example
+
+```html
+&lt;picture&gt;
+    &lt;source srcset="media/books-portrait.jpg"
+            media="(min-width: 800px)"&gt;
+    &lt;img src="media/books-landscape.jpg" /&gt;
+&lt;/picture&gt;
+```
+
+---
+
+# Example
+
+<picture>
+    <source srcset="media/books-portrait.jpg"
+            media="(min-width: 800px)">
+    <img src="media/books-landscape.jpg" />
+</picture>
+
+---
+
+# Things to Think About
+
+- Good for Art Direction, changing design according to responsive layouts
+- Good for offering different image formats in case a browser can't handle newer ones
+
+---
+
+# More Resources For Images:
+
+- [CSS Tricks: Use Srcset](https://css-tricks.com/responsive-images-youre-just-changing-resolutions-use-srcset/)
+- [MDN Responsive Image Tutorial](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
+- [Interneting Is Hard: Responsive Images](https://internetingishard.com/html-and-css/responsive-images/)
+
+---
+name: audio
+
+# `&lt;audio&gt;`
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio)
+
+- Embed sound content in a media player
+- Needs `src` attribute with path to file
+- Can use `controls` attribute to show playback buttons
+- Can provide `source` element for different file types
+
+---
+name: video
+
+# `&lt;video&gt;`
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)
+
+- Embed video content in a media player
+- Needs `src` attribute with path to file
+- Can use `controls` attribute to show playback buttons
+- Can provide `source` element for different file types
+
+---
+name: iframe
+
+# `&lt;iframe&gt;`
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe)
+
+- A browser window within a browser window
+- Use `src` attribute to load other page
+- Beware! Two windows is twice the processing power.
+
+---
+name: canvas
+
+# `&lt;canvas&gt;`
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas)
+
+- Can draw graphics or animations on the screen...
+- But you need JavaScript.
+- Good for simple games! (wink wink)
+
+---
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
