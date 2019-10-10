@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced CSS</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../assets/slides.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: middle, center
+
+# Advanced CSS
+
+---
+
+# Agenda:
+
+- [Shadows](#shadows)
+- [Gradients](#gradients)
+- [Image Effects](#image-effects)
+- [Transforms](#transforms)
+- [Transitions](#transitions)
+- [Animations](#animations)
+- [Custom Properties](#custom-props)
+
+---
+name: shadows
+
+# Text Shadows
+
+```css
+selector {
+  text-shadow: <x> <y> <blur> <color>;
+}
+
+p {
+  text-shadow: 3px 3px 2px #ccc;
+}
+```
+
+<style type="text/css" media="screen">
+.t-shadow {
+  text-shadow: 3px 3px 2px #ccc;
+}
+</style>
+
+## .t-shadow[I have a subtle text shadow.]
+
+---
+
+# Text Shadows
+
+Good for:
+- Creating depth
+- Making text readable on images
+- Making exciting headings
+
+Read More:
+- [MDN: Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow)
+- [Codrops: Reference](https://tympanus.net/codrops/css_reference/text-shadow/)
+- [Codrops: Cool Text Effects](https://line25.com/articles/using-css-text-shadow-to-create-cool-text-effects)
+
+---
+
+# Box Shadows
+
+```css
+selector {
+  box-shadow: <type> <x> <y> <blur> <spread> <color>;
+}
+
+div {
+  box-shadow: 1px 1px 7px -1px #ccc;
+}
+```
+
+<style type="text/css" media="screen">
+.box-shadow {
+  box-shadow: 1px 1px 7px -1px #ccc;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  width: 60%;
+}
+</style>
+
+<div class="box-shadow">I have a subtle box shadow.</div>
+
+---
+
+# Box Shadows
+
+Good For:
+- Creating depth
+- Highlighting focused elements
+
+Read More:
+- [MDN: Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow)
+- [Codrops: Reference](https://tympanus.net/codrops/css_reference/box-shadow/)
+- [Alligator.io: Box Shadow Examples](https://alligator.io/css/box-shadow-examples/)
+
+---
+name: gradients
+
+# Gradients
+
+- Technically a data type, like color or length
+- CSS generated image
+- Linear, radial, and conic functions
+
+[MDN: Using CSS Gradients](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients)
+
+---
+
+# Linear Gradient Example
+
+```css
+div {
+  background: linear-gradient(#88c0d0, #5e81ac);
+}
+
+```
+
+<style type="text/css" media="screen">
+.gradient {
+  height: 200px;
+  margin: 0 auto;
+  width: 200px;
+}
+
+.lin-gradient {
+  background: linear-gradient(#88c0d0, #5e81ac);
+}
+</style>
+
+<div class="gradient lin-gradient"></div>
+
+[MDN: Linear Gradient Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient)
+
+---
+
+# Radial Gradient Example
+
+```css
+div {
+  background: radial-gradient(#88c0d0, #5e81ac);
+}
+
+```
+
+<style type="text/css" media="screen">
+.rad-gradient {
+  background: radial-gradient(#88c0d0, #5e81ac);
+}
+</style>
+
+<div class="gradient rad-gradient"></div>
+
+[MDN: Radial Gradient Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient)
+
+---
+
+# Conic Gradient Example
+
+```css
+div {
+  background: conic-gradient(#88c0d0, #5e81ac);
+}
+
+```
+
+<style type="text/css" media="screen">
+.con-gradient {
+  background: conic-gradient(#88c0d0, #5e81ac);
+}
+</style>
+
+<div class="gradient con-gradient"></div>
+
+[MDN: Conic Gradient Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/conic-gradient)
+
+---
+
+# Gradients
+
+Read More:
+- [CSS Tricks: Gradients](https://css-tricks.com/css3-gradients/)
+- [Patterns made with CSS3 Gradients](https://leaverou.github.io/css3patterns/)
+- [Codrops: Gradient Typography Animation](https://tympanus.net/codrops/2018/01/24/gradient-topography-animation/)
+
+---
+name: image-effects
+
+# Image Effects
+
+CSS Properties:
+- [filter](https://developer.mozilla.org/en-US/docs/Web/CSS/filter): apply graphical effect
+- [blend-mode](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode): blend two overlapping elements
+- [mask](https://developer.mozilla.org/en-US/docs/Web/CSS/mask): hide parts of an image by changing pixels
+- [clip-path](https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path): hide parts of an image by cutting it
+
+---
+
+# Image Effects
+
+Read More:
+- [Codrops: Filter Reference](https://tympanus.net/codrops/css_reference/filter/)
+- [CSS Tricks: Basics of Blend Modes](https://css-tricks.com/basics-css-blend-modes/)
+- [CSS Tricks: Clipping and Masking](https://css-tricks.com/clipping-masking-css/)
+- [Mozilla Hacks: Shapes in Clipping and Masking](https://hacks.mozilla.org/2017/06/css-shapes-clipping-and-masking/)
+
+---
+name: transforms
+
+# Transforms
+
+A single property with many functions:
+- Move
+- Resize
+- Skew
+- Rotate
+
+[MDN: Transform Functions](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function)
+
+---
+
+# Transform
+
+```css
+div {
+  transform: rotate(-30deg) translate(-90px, 140px);
+}
+```
+
+<style type="text/css" media="screen">
+.transformed {
+  border: 1px solid #ccc;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  transform: rotate(-30deg) translate(-90px, 140px);
+  width: 60%;
+}
+</style>
+
+<div class="transformed">I am rotated and translated.</div>
+
+---
+
+# Transforms
+
+Read More:
+- [MDN: Using Transforms](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transforms/Using_CSS_transforms)
+- [ShayHowe: Learn Transforms](https://learn.shayhowe.com/advanced-html-css/css-transforms/)
+- [Codrops: Animated Border Menus](https://tympanus.net/codrops/2013/09/30/animated-border-menus/)
+
+---
+name: transitions
+
+# Transitions
+
+- Animate from one style to another
+- Property + Duration + Timing Function (+ Delay)
+- Only properties with halfway point
+
+[Visualize Cubic Bezier Curves](https://cubic-bezier.com/)
+
+---
+
+# Transitions
+
+```css
+a {
+  background: #5e81ac;
+  color: #88c0d0;
+  transition: background 0.3s, color 0.3s;
+}
+a:hover {
+  background: #88c0d0;
+  color: #5e81ac;
+}
+```
+
+<style type="text/css" media="screen">
+a.transition {
+  background: #5e81ac;
+  color: #88c0d0;
+  display: block;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+  width: 50%;
+}
+a.transition:hover {
+  background: #88c0d0;
+  color: #5e81ac;
+}
+</style>
+
+<a href="#" class="transition">Hover to see transition!</a>
+
+---
+
+# Transitions
+
+Read More:
+- [MDN: Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/transitio://developer.mozilla.org/en-US/docs/Web/CSS/transition)
+- [Codrops: Reference](https://tympanus.net/codrops/css_reference/transition/)
+- [CSS Tricks: Timing Function](https://css-tricks.com/almanac/properties/t/transition-timing-function/)
+- [Codrops: Timing Function](https://tympanus.net/codrops/css_reference/timing-function_value/)
+
+
+---
+name: animations
+
+# Animations
+
+- [MDN: Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/animation)
+- [MDN: @keyframes](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes)
+- [CSS Tricks: Using Multi-Step Animations](https://css-tricks.com/using-multi-step-animations-transitions/)
+- [ShayHowe: Tansitions &amp; Animations](https://learn.shayhowe.com/advanced-html-css/transitions-animations/)
+---
+name: custom-props
+
+# Custom Properties
+
+- [MDN: Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
