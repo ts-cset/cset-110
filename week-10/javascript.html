@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Intro to JavaScript</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../assets/slides.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: middle, center
+
+# Intro to JavaScript
+
+---
+
+# Agenda:
+
+- [What is it?](#what)
+- [How does it work?](#how)
+- [Thinking like a programmer](#thinking)
+- [Reading like a programmer](#reading)
+
+---
+
+# .fourteen[Exercise: Make a list of five web sites and five web applications.]
+
+- Grab a partner.
+- Don't look it up, try to make an educated guess.
+- What is the main difference?
+
+---
+name: what
+
+# What is JavaScript?
+
+- high-level
+- interpreted
+- scripting language
+
+One of the three core web technologies.
+
+---
+
+# What is ECMAScript?
+
+- Like CSS and HTML, JS has a spec
+- [Read it here](https://www.ecma-international.org/ecma-262/10.0/index.html)
+- Many versions
+- Names are interchangeable
+
+---
+
+# What does it do?
+
+- Listen to events
+- Dynamically update content
+- Dynamically update style
+- Control browser features
+- Store and manipulate data
+
+---
+name: how
+
+# How does it work?
+
+1. Web page loads in browser environment
+2. JavaScript is .eight[interpreted] by the browser's engine
+3. The browser then follows the program commands
+
+---
+count: false
+
+# How does it work?
+
+1. Web page loads in browser environment
+2. JavaScript is .eight[interpreted] by the browser's engine
+3. The browser then follows the program commands
+
+.eleven[Notice the ordered list. Timing is important.]
+
+---
+
+# How does the browser get our code?
+
+- CSS uses the `&lt;link&gt;` or `&lt;style&gt;` tag
+- JS uses the `&lt;script&gt;` tag
+
+---
+
+# Internal JS
+
+index.html
+```html
+&lt;head&gt;
+  ...
+
+  &lt;script&gt;
+    // JavaScript goes here
+  &lt;/script&gt;
+&lt;/head&gt;
+```
+
+---
+
+# External JS
+
+index.html
+```html
+&lt;head&gt;
+  ...
+
+  &lt;script src="script.js" defer&gt;&lt;/script&gt;
+&lt;/head&gt;
+```
+
+script.js
+```js
+// JavaScript goes here
+```
+
+---
+name: thinking
+class: center, middle
+
+# Thinking Like A Programmer
+
+---
+
+# Things Get Complicated
+
+To use JavaScript in the browser, you need to know:
+- The Language
+- The Browser APIs
+
+_That's Application Programming Interfaces_
+
+---
+
+# Solving Problems
+
+To use a programming language to solve a problem, you need to know:
+- The solution
+- How to convert the solution to code
+
+_Don't forget about pseudocode!_
+
+---
+name: reading
+
+# Reading Like a Programmer
+
+Levels of technical reading:
+1. Source Code
+2. Documentation or Specification
+3. Interpretation of Docs or Specs
+4. Tutorial or Guide
+
+---
+
+# Reading Like a Programmer
+
+- Lower levels give you depth
+- Higher levels give you mileage
+
+All levels are valuable *if* you are using them how they are meant to be used.
+
+---
+
+# Reading Like a Programmer
+
+- Our job requires deep focus
+- Focus is a skill
+- Skills can be improved with dedicated practice
+
+Without this skill, we can't access lower levels of technical reading. 
+
+---
+class: center, middle
+
+# So Let's Read
+
+# [Eloquent JavaScript](https://eloquentjavascript.net/index.html)
+
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
