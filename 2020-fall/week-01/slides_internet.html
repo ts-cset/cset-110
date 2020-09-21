@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Internet</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://ts-cset.github.io/cset-105/assets/slides.css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: middle
+
+<span>.eight[CSET-110]</span><br>
+<span>.eight[Web Development I]</span>
+
+# The Internet
+
+---
+
+# Today's Goal
+
+To learn the the underlying technologies behind the internet and relate it to what we've been learning in CSET-105.
+
+---
+
+# Contents:
+
+- [Why Web Development?](#why)
+- [Office Worker Analogy](#analogy)
+- [Brief History](#history)
+- [Getting Started with HTML](#html)
+
+---
+name: why
+
+# Why Web Development?
+
+- We learned basic building blocks of programming languages.
+- We practiced writing them in JavaScript's syntax.
+- We built a few basic programs for an end user.
+
+--
+
+.fourteen[How do we get it to them?]
+
+---
+
+# Option 1:
+
+1. Pick a platform: Windows, macOS, Linux, iOS, Android, etc...
+2. Learn how to build a .eight[Graphical User Infterface] for that platform
+3. Adapt our code to use that GUI
+4. Package our code to be installed as a program for that platform
+5. Distribute that package
+
+--
+
+Now do that again for all the platforms you need.
+
+---
+
+# Option 2:
+
+1. Learn an open standard useable on all platforms
+2. Learn how to build a .eight[GUI] using this standard
+3. Adapt our code to use it
+4. Deploy our code to the internet
+
+--
+
+That's the beauty of web development!
+
+---
+
+# A Front-End Web Developer
+
+- Helps design, plan, and build web sites/apps
+- Uses HTML, CSS, and JS
+
+Works on parts that the end user interacts with.
+
+---
+
+# Three Languages?
+
+- .eight[HTML]: the content
+- .eight[CSS]: the style
+- .eight[JS]: the programming language
+
+---
+
+# Three Languages?
+
+- The words you're reading now are written in .eight[HTML]
+- The colors and shapes you're seeeing are defined in .eight[CSS]
+- And your ability to move through slides is handled by .eight[JS]
+
+---
+
+# A Back-End Web Developer
+
+- Helps design, plan, and build web apps
+- Uses languages like PHP, Node, or Python
+- Needs to know databases and security
+
+Works on parts that power the front-end.
+
+---
+
+# A Full-Stack Developer
+
+Does a little of both.
+
+---
+
+# Review Terms from CSET-105
+
+- .eight[Computer]: A device for storing and processing data.
+- .eight[Binary]: The basic 1s and 0s that everything is stored in.
+- .eight[Programming Language]: A higher-level abstraction to control the computer with words.
+- .eight[Operating System]: The program that manages all the basic functions of the computer and controls the hardware.
+
+--
+
+.fourteen[But how does the hardware actually do this?]
+
+---
+name: analogy
+
+# Time For An Analogy
+
+- Imagine an office .eight[worker] coming to their cubicle to start the day.
+- Goes to .eight[file cabinet], grabs papers to work on at their .eight[desk].
+- The .eight[worker] can work on one at a time, but the .eight[desk] can hold many.
+- The .eight[desk] can't get too messy, things can go back in the .eight[file cabinet].
+- At the end of the day, everything gets stored back in the .eight[file cabinet].
+
+---
+
+# Time For An Analogy
+
+- .eight[Hard Drive]: long-term storage of files, like the file cabinet
+- .eight[Random Access Memory]: short-term storage of what's being read or written, like the desk
+- .eight[Central Processing Unit]: following instructions to read and write, like the worker 
+
+[YouTube: The Processor's Fetch/Execute Cycle](https://www.youtube.com/watch?v=Z5JC9Ve1sfI&list=LLPPYkKFuRe6hkqcUAZGDi3Q&index=1271)
+
+---
+
+# Time For An Analogy
+
+Important things about this analogy:
+
+1. It's all about files.
+2. If we had more workers, how would they share files?
+
+---
+name: history
+
+# Brief History Lesson
+
+---
+
+# 1969: UNIX
+
+# .eight[Written in the C programming language, it was the first OS to work on different platforms.]
+
+???
+Before now, each computer had it's own special OS that only it could run.
+
+---
+
+# 1969: ARPANET
+
+# .eight[DARPA and a few universities created the first actual computer network.]
+
+???
+Defense Advanced Research Projects Agency. Height of the Cold War, another means of communicating in case telephone system was bombed. Wasn't made public until 1972.
+
+---
+
+# 1972: Electronic Mail
+
+# .eight[Ray Tomlinson created the first application to send and read messages.]
+
+---
+
+# 1980s: Open Source
+
+# .eight[DARPA started sharing the protocols with the public to use and improve, splitting the ARPANet into a public and military net.]
+
+---
+
+# 1989: HTTP
+
+# .eight[Tim Berners-Lee created the .one[HyperText Transfer Protocol], a standard way for various computer platforms to access the same data.]
+
+???
+Took the idea from UNIX. Known as the father of the WWW.
+
+---
+
+# HTTP
+
+- Defines how messages are formatted and transmitted
+- An abstraction on other Protocols, like IP and TCP
+- Two way communication using .eight[Requests] and .eight[Responses]
+- Uses action verbs to describe what the listening computer should do:
+  - .eight[GET] a webpage
+  - .eight[POST] a submission to a form
+
+---
+class: middle, center
+
+![Server and Clients](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Client-server-model.svg/500px-Client-server-model.svg.png)
+
+# Requests and Responses
+
+---
+
+# 1993: Mosaic
+
+# .eight[The first modern web browser, an application used to view pages on the world wide web.]
+
+???
+Berners-Lee made his own, but this had images, the URL bar, back/forward/reload buttons. The modern touches.
+
+---
+
+# HyperText Markup Language
+
+# .eight[HTML is the standard language to write web pages. Servers send HTML files to your client and the browser renders those documents.]
+
+---
+
+# 1995: ISPs
+
+# .eight[DARPA gave over the public net to Internet Service Providers and here we are!]
+
+---
+name: html
+
+# .eight[The Important Words]
+
+- HTTP
+- Web Browser
+- HTML
+
+---
+
+
+# If the internet is just a network of computers
+
+---
+
+count: false
+
+# If the internet is just a network of computers
+
+# And computers are composed of files
+
+---
+
+count: false
+
+# If the internet is just a network of computers
+
+# And computers are composed of files
+
+# Then...
+
+---
+
+class: middle, center
+
+# .eight[The internet is a series of computers sharing files with each other.]
+
+---
+
+# The Web
+
+- .eight[HTTP]: the way a computer sends and receives files
+- .eight[HTML]: the language the files are written in
+- .eight[Browser]: the program that starts the communication and shows the result
+
+---
+
+# The Web
+
+...is not The Internet.
+
+--
+
+Just a small part of it.
+
+---
+
+# A Website
+
+- Series of files
+- Stored on a computer
+- Sent over the internet
+- To be viewed on your computer
+
+---
+
+# Most Websites
+
+- Collection of HTML/CSS/JS files
+- Nested in folders
+- Hyper-Linked together
+- Other files like images/video/documents
+
+---
+
+# The smallest possible website
+
+- A single HTML file
+
+---
+
+# So Let's Make One!
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
