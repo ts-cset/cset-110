@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basic HTML</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://ts-cset.github.io/cset-105/assets/slides.css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: middle
+
+<span>.eight[CSET-110]</span><br>
+<span>.eight[Web Development I]</span>
+
+# Basic HTML
+
+---
+
+# Today's Goal
+
+To understand how HyperText Markup Language works and why we need it.
+
+---
+
+# Contents:
+
+- [What's the point?](#why)
+- [Document Object Model](#dom)
+- [How do we use it?](#how)
+- [HTML5 Specification](#spec)
+- [Semantics?](#semantics)
+
+---
+class: middle, center
+
+![A Letter by Einstein](../../assets/images/letter-einstein.jpg)
+
+???
+What is this? A letter. You know because you've learned this, you've seen plenty of them before.
+
+---
+
+class: middle, center
+
+![A Letter in Mandarin](../../assets/images/letter-mandarin.png)
+
+---
+
+# Recognize the Parts of a Letter
+
+- Heading
+- Greeting
+- Body
+- Salutation
+
+You know the _purpose_ of those parts.
+
+---
+
+# Recognize the Parts of a Letter
+
+Could you recognize the parts of:
+
+- A newspaper?
+- A magazine?
+- A book?
+
+---
+
+# A Silly Question
+
+.eight[Does the paper that these words are written on understand what these parts are?]
+
+--
+count: false
+
+- Of course not! Paper isn't sentient.
+--
+
+- Then our computer won't understand it either.
+
+---
+name: why
+
+# The Purpose Of HTML
+
+To describe to the computer the purpose of each piece of content in your web page.
+
+--
+
+1. Before anything else, we need content.
+2. When we understand the purpose of our content, we can mark it up with HTML.
+
+---
+
+# Markup Language
+
+Just like reading a book for school and highlighting or underlining the important parts.
+
+- Describing the purpose of the content
+- HTML is one of many: Markdown, XML, YAML, TOML...
+--
+
+- Not a programming language because there's no data or decision making
+
+---
+name: dom
+
+# Document Object Model
+
+- Your browser reads HTML, then builds the document's structure
+- An outline of your content to be rendered on screen
+- Eventually, we'll learn to manipulate the DOM with JavaScript
+
+.eight[Render]: make something visible on the screen
+
+---
+class: middle, center
+
+![DOM Outline](https://courses.cs.washington.edu/courses/cse190m/07sp/lectures/slides/images/dom.png)
+
+???
+Think of your web page like an outline, each item is called a node.
+
+
+---
+name: how
+
+# How Do We Use It?
+
+1. Start with content.
+2. For each piece of content, figure out it's purpose.
+3. Enclose that content with the appropriate HTML .eight[tag].
+
+--
+
+Two Hardest Parts:
+
+- Separating pieces of content
+- Finding the right .eight[tag]
+
+---
+
+# Tags vs. Elements
+
+- The .eight[Tag] creates the .eight[Element]
+- Tags: what is written in source code
+- Elements: what is created by the browser
+
+???
+Written input vs. rendered output.
+---
+class: middle, center
+
+![Anatomy of a Tag](https://mdn.mozillademos.org/files/7659/anatomy-of-an-html-element.png)
+
+---
+
+# Rules for Tags
+
+- Usually, there is a pair of tags: the .eight[opening] and .eight[closing] tag
+- Each tag is a name surrounded by angle brackets: `&lt;` and `&gt;`
+- The opening tag can contain optional .eight[attributes]
+  - Used to describe the element
+  - Or change its behavior
+- Closing tag has a slash before the name, nothing else allowed.
+- Content is placed between the two tags.
+
+---
+
+# Empty Tags
+
+- Some elements are composed of one tag to open and close them.
+- These tags are the name surrounded by angle brackets with a slash at the end
+- Can contain attributes
+- Contains no content
+
+```html
+&lt;input type="text" /&gt;
+```
+
+---
+
+# Attributes
+
+- **Always** come in name/value pairs
+- Provide more information about it.
+- Modify the tag's default behavior
+- There are global attributes that can be given to any element.
+- There are attributes specific to certain elements.
+- Can be in any order.
+
+```html
+name="value"
+```
+
+---
+
+# Examples
+
+```html
+&lt;p class="warning"&gt;
+&lt;a href="https://google.com"&gt;
+&lt;input type="checkbox" checked /&gt;
+```
+
+---
+count: false
+
+# Examples
+
+```html
+&lt;p class="warning"&gt;
+&lt;a href="https://google.com"&gt;
+&lt;input type="checkbox" checked="checked" /&gt;
+```
+
+---
+class: middle, center
+
+# A tag without attributes still has attributes.
+
+# .eight[Default Attributes]
+
+---
+
+# Nesting Elements
+
+- Wrapping content with a tag creates .eight[meaning]
+- Wrapping tags with tags creates .eight[organization]
+
+
+---
+class: middle, center
+
+![Nesting Dolls](http://drydenart.weebly.com/uploads/8/9/6/1/8961653/nesting-dolls_orig.gif)
+
+---
+
+# .eight[do this]
+```html
+&lt;parent&gt;
+  &lt;child&gt;...&lt;/child&gt;
+&lt;/parent&gt;
+```
+# .eleven[not this]
+```html
+&lt;parent&gt;
+  &lt;child&gt;...&lt;/parent&gt;
+&lt;/child&gt;
+```
+
+---
+
+# Syntax Errors in HTML?
+
+- No such thing
+- Meant to be as lenient as possible
+- Instead of a breaking error, the browser might:
+  - Ignore it
+  - Mis-interpret it
+
+---
+
+# Syntax Rules
+
+1. Write tags and attributes correctly
+2. Nest tags correctly
+
+--
+
+That's it?
+
+--
+
+...not quite
+
+---
+name: spec
+
+# HTML Specification
+
+- [Read it](https://www.w3.org/TR/html52/) if you want, it's boring.
+- A specification is an agreed upon way for:
+  - You to write it 
+  - Browsers to display it
+
+This separates the amateur website builder from the professional.
+
+---
+class: middle, center
+
+# It's important for you to know the spec, but .eight[more important] to know how different browsers interpret that spec.
+
+---
+
+# Other Rules
+
+- Working on any browser
+- Displaying correctly on any screen size
+- Using content categories correctly
+- Making the website accessible
+- And more...
+
+---
+
+# HTML5
+
+- Newest version of the spec
+- Plenty of older versions
+- Every web page needs to .eight[declare] it's version
+
+```html
+&lt;!DOCTYPE html&gt;
+```
+
+The Document Declaration
+
+---
+name: semantics
+class: middle, center
+
+# .eight[Syntax]
+
+## vs
+
+# .eight[Semantics]
+
+---
+
+class: middle, center
+
+<img alt="Yoda Quote" src="https://i.imgur.com/duxwrb3.jpg" width="100%"/>
+
+---
+
+class: middle, center
+
+<img alt="Chomsky Quote" src="https://quotefancy.com/media/wallpaper/3840x2160/376737-Noam-Chomsky-Quote-Colorless-green-ideas-sleep-furiously.jpg" width="100%"/>
+
+---
+
+# Two Ways To Be Incorrect
+
+- Syntactically: we haven't followed the rules of the language
+- Semantically: we haven't properly communicated our meaning
+
+--
+
+Tools can help with syntax issues, only you can prevent semantic issues.
+
+---
+
+# Put it all together!
+
+[To-Do Manager](todo-manager/index.html)
+
+---
+
+# Let's look at some tags!
+
+- [HTML5 Spec](https://www.w3.org/TR/html52/)
+- [MDN's HTML Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>

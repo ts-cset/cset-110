@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>To-Do Manager</title>
+  </head>
+  <body>
+    <h1>To-Do Manager</h1>
+
+    <ol class="todos">
+    </ol>
+
+    <label>
+      New Todo:
+      <input type="text" class="newTodo"/>
+    </label>
+
+    <button class="addTodo">Add</button>
+
+    <script>
+      // Create a variable to hold an array of to-do items
+      const TODOS = [
+        { title: "Learn about objects and arrays", done: true },
+        { title: "Build a to-do manager", done: false },
+        { title: "Enjoy the weekend!", done: false },
+      ];
+
+      // Create variables to store the HTML element objects
+      const todosList = document.querySelector('.todos');
+      const newTodoInput = document.querySelector('.newTodo')
+      const addTodoButton = document.querySelector('.addTodo');
+
+      // Create function to list to-do items
+      const listTodos = function() {
+        // Remove any old to-dos
+        while (todosList.firstChild) {
+          todosList.firstChild.remove();
+        }
+
+        // Loop through the indexes in TODOS array
+        for (let index in TODOS) {
+          // Get the element out of the array
+          const item = TODOS[index];
+
+          // Create the HTML for this item
+          const listItem = document.createElement('li');
+          const checkBox = document.createElement('input');
+          checkBox.type = 'checkbox';
+          checkBox.checked = item.done;
+          checkBox.addEventListener('click', completeTodo(index));                        
+
+          let title = item.title;
+          if (item.done) {
+            listItem.classList.add('done')
+            title = document.createElement('strike');
+            title.append(item.title);
+          }
+
+          // Add the checkbox and title to the list item element
+          listItem.append(checkBox, title);
+
+
+          // Add the item element to the list element
+          todosList.appendChild(listItem);
+        }
+      };
+
+      // Create function to add a new to-do item to the list
+      const addTodo = function() {
+        // Get the value entered into the text input
+        const title = newTodoInput.value;
+
+        // Push the new to-do item to the list
+        TODOS.push({ title, done: false });
+
+        // Update the HTML elements
+        listTodos();
+        newTodoInput.value = "";
+      };
+
+      const completeTodo = function(index) {
+        // Create a function for this to-do item
+        const eventHandler = function() {
+          // Update the done property to be the opposite of what it was
+          TODOS[index].done = !TODOS[index].done;
+
+          // Update the HTML elements
+          listTodos();
+        };
+
+        return eventHandler;
+      };
+
+      // Connect the button to the addTodo function
+      addTodoButton.addEventListener('click', addTodo);
+      // And show the to-do items when the page loads
+      listTodos();
+    </script>
+  </body>
+</html>
