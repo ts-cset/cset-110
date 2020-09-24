@@ -1,0 +1,628 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>HTML Elements</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="8704d7a7-66f9-4c3f-9b9a-0c83b0cc0323" class="page sans"><header><h1 class="page-title">HTML Elements</h1></header><div class="page-body"><p id="c763ff4c-1af1-4f9e-bb8a-c636e2f4f806" class="">Source: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">https://developer.mozilla.org/en-US/docs/Web/HTML/Element</a></p><h1 id="50c8a2fe-7a8c-42d5-a5d1-4cd760e98871" class="">Important Sections</h1><p id="3c621b2a-80a9-4691-b192-039c27a5e953" class="">The following is a prioritized list of HTML elements to learn. They are grouped into rough categories based on how they are used with the most necessary or frequently used categories listed first. Within each category is an ordered list containing elements you should know</p><h2 id="9dd51bfd-9913-437e-b0c7-10e8b221b3ba" class="">Root Elements</h2><p id="8ec8b0d3-ea7a-44ef-a478-906a7f08bfe6" class="">These elements are necessary and there should be one, and only one, of each of these in your file. All other elements should be nested within them, so we call them top-level or root elements.</p><ol id="d497a506-4b39-4108-ae07-6f889d68b571" class="numbered-list" start="1"><li>html</li></ol><ol id="9c9d6990-868f-4172-9625-a805cd1cd7e8" class="numbered-list" start="2"><li>head</li></ol><ol id="f0d1db7a-87f9-4486-8475-e3934dcc189e" class="numbered-list" start="3"><li>body</li></ol><h2 id="716cc8d4-7860-4e0b-a3a8-8a6f21e439f6" class="">Document Metadata</h2><p id="6fa8d0ff-c52d-4af6-9a12-52384e6b4608" class="">These elements contain information about your file. The information isn&#x27;t rendered as part of your web page, but it&#x27;s used in many places. For example, the page title is shown in the browser tab or in the bookmark bar. Metadata is used by other programs, like search engines or social media sites.</p><ol id="585cacc4-c095-40f3-b2f2-90db919fc187" class="numbered-list" start="1"><li>title</li></ol><ol id="d8e9fdab-c46b-415a-b9b6-fb79910211a6" class="numbered-list" start="2"><li>meta</li></ol><ol id="207d9317-e564-4e3e-bc89-f239b4082c13" class="numbered-list" start="3"><li>link</li></ol><p id="8ea57f12-2060-4c08-8425-8e75c8e8e693" class="">Other: style, base</p><h2 id="6cb2a7a4-9107-43dc-91b0-d2a9f539379d" class="">Content Sectioning</h2><p id="40552e31-68aa-4c97-a55d-7c6684fe32b9" class="">These elements allow you to organize your content. If an entire newspaper was one long paragraph, it wouldn&#x27;t be readable. Separating related elements into sections helps your user find what they&#x27;re looking for.</p><ol id="157537f7-5115-48bf-b314-1abb6f5d0d40" class="numbered-list" start="1"><li>h1 - h6</li></ol><ol id="0635e7e7-5c71-4d67-86dc-b52a94c1fe44" class="numbered-list" start="2"><li>nav</li></ol><ol id="2046ebdb-4194-4373-9de2-fb33700402e7" class="numbered-list" start="3"><li>main</li></ol><ol id="6619514c-6874-4a39-9b06-faf0954a8c94" class="numbered-list" start="4"><li>article</li></ol><ol id="a1240ff9-0df6-4985-9f77-ec1fe5ae1797" class="numbered-list" start="5"><li>header</li></ol><ol id="d6183914-cd3b-48e1-bf30-1f350293a070" class="numbered-list" start="6"><li>footer</li></ol><ol id="498b0715-0cc7-4af3-95a3-19fb1211575c" class="numbered-list" start="7"><li>aside</li></ol><ol id="07ff9a9a-a5f8-4ee8-86c2-0726029f1df4" class="numbered-list" start="8"><li>section</li></ol><p id="793081bb-57ef-48dc-ac15-ffccdebdf163" class="">Other: address, hgroup</p><h2 id="4235d558-f6e6-4313-8da7-f4c9a706e83f" class="">Block Text Content</h2><p id="103bd9b6-30ae-4d94-aa87-0b5ca04ac497" class="">These elements break sections into even smaller blocks describing the purpose of that text content.</p><ol id="8ee28a7f-5df7-4e62-bf19-bda5ccab07f5" class="numbered-list" start="1"><li>p</li></ol><ol id="20840485-8848-4bee-a827-c462bbe860f1" class="numbered-list" start="2"><li>ol and ul</li></ol><ol id="af58bebe-7336-4d07-ac7e-c8df70947cf6" class="numbered-list" start="3"><li>li</li></ol><ol id="a00f60ff-f182-43ce-b366-2cb347f643aa" class="numbered-list" start="4"><li>hr</li></ol><ol id="2479fb00-3c17-44f9-b0db-6036835495a5" class="numbered-list" start="5"><li>div</li></ol><p id="60ec9164-1e3f-4943-9ff1-47800123af2d" class="">Other: blockquote, figure, figcaption, dl, dt, dd, pre</p><h2 id="6824d456-496f-4443-9fa7-a7ffc51ba810" class="">Inline Text Content</h2><p id="45bf17f9-2b26-4e65-a170-856ecd6c0721" class="">These elements describe the purpose of a word or phrase within a larger block of text.</p><ol id="2b4e65f0-816e-4d14-b830-af40cc962b2d" class="numbered-list" start="1"><li>a</li></ol><ol id="d36c7918-380b-4442-9a3d-7e2aa1f96f29" class="numbered-list" start="2"><li>strong and em</li></ol><ol id="4f92e62d-613c-4895-9448-86eb97a0e2c3" class="numbered-list" start="3"><li>time</li></ol><ol id="e18626b6-2d0e-4cee-a855-47b2a34d6c16" class="numbered-list" start="4"><li>code</li></ol><ol id="35634aaf-9d3d-4338-b7e0-be7bb0083ef7" class="numbered-list" start="5"><li>br</li></ol><ol id="195ad3c9-8c23-4a21-85c5-0a19136527f3" class="numbered-list" start="6"><li>span</li></ol><p id="32635d1e-648e-451d-8d7f-d7f13a1a16bb" class="">Other: abbr, sub, sup, q, cite, data, mark, s, small, var</p><p id="168641f8-b62e-4331-8a43-0868a63cba20" class=""><em>Note: there are more in this category, but you probably shouldn&#x27;t be using them.</em></p><h2 id="cbec9c47-acfa-4a7e-8892-5f7efb3b43c5" class="">Media Content</h2><p id="28be9f2c-8191-455b-b6b4-aea3d4e5b5a4" class="">These elements handle content that isn&#x27;t text.</p><ol id="418156ba-5b9c-4da4-8f3a-7ff8774572e8" class="numbered-list" start="1"><li>img</li></ol><ol id="a53322ff-d88e-49df-a794-30b7795f2196" class="numbered-list" start="2"><li>audio</li></ol><ol id="24d9dad8-d259-4dac-8570-eb689f76e204" class="numbered-list" start="3"><li>video</li></ol><p id="db037245-8fe0-4368-8af5-1c39b1238d7d" class="">Other: track, area, map</p><h2 id="54916bae-062f-4542-8859-9072b14af7d9" class="">Form Content</h2><p id="b40b4423-e524-4a10-a236-17794f0f15cc" class="">These elements are for the user to submit data to a web application to save or process.</p><ol id="c074c8d1-8756-4118-bc6e-a4b0f261f5cf" class="numbered-list" start="1"><li>form</li></ol><ol id="02c12723-2328-4689-a13e-887e26b60c83" class="numbered-list" start="2"><li>label</li></ol><ol id="5fb3b9bb-23b8-4c63-a85e-badf57d5b3f8" class="numbered-list" start="3"><li>input</li></ol><ol id="15f42c9e-4047-4b03-9d6a-a7a4f302bdc2" class="numbered-list" start="4"><li>button</li></ol><ol id="b77d080b-4ede-4851-a20a-466ace4500f9" class="numbered-list" start="5"><li>select and option</li></ol><ol id="2838fd8a-2a28-4e9d-8712-4707b188888a" class="numbered-list" start="6"><li>textarea</li></ol><p id="bba3c376-9e1a-4007-97e5-8d57e74614e7" class="">Other: fieldset, legend, datalist, meter, optgroup, output, progress</p><h2 id="7798f419-0d14-494d-8d6e-4262811660d9" class="">Table Content</h2><p id="ae86ef35-c457-4514-a757-c5ef7896e979" class="">These elements are for displaying tabular data. If the content would fit in a spreadsheet, it should go in a table.</p><ol id="cfc9e09f-8918-4d7b-8a4f-754857025eea" class="numbered-list" start="1"><li>table</li></ol><ol id="8cd10eda-82f3-47ba-88ef-ea48c79868ee" class="numbered-list" start="2"><li>tr</li></ol><ol id="2af74846-f219-48a3-95bd-221477c00610" class="numbered-list" start="3"><li>td and th</li></ol><ol id="d142426e-4ace-45a3-bb8e-564ddb65a714" class="numbered-list" start="4"><li>thead, tbody, tfoot</li></ol><p id="da7f8d23-e300-4b90-b4fa-25152170ca0e" class="">Other: colgroup, col</p><h2 id="cd11caa3-905c-43f9-879c-f1b50e2398b0" class="">Scripting</h2><p id="7a85e8b9-bf49-4ee4-90f8-6c46d52398e0" class="">These elements support JavaScript to create dynamic web pages, from simple animations to complex web applications.</p><ol id="f9c29612-ef77-447b-897d-7445dfe43662" class="numbered-list" start="1"><li>script</li></ol><p id="45eec500-4764-4e21-a240-a9ae019d2d0a" class="">Other: canvas, noscript</p><h2 id="9c4d6243-1cb1-46ce-ba20-642fd6e791e4" class="">Embedded Content</h2><p id="7e3067ee-4362-4446-a872-bfcbf6610b59" class="">These elements are for embedding more complicated content than the media elements. For example, an iframe allows you to place another web page inside your web page while a picture element allows you to define alternative images for an img element to be used with different displays.</p><ol id="45c9aba2-26fa-4e0f-b3f1-e902a0ce5f7c" class="numbered-list" start="1"><li>iframe</li></ol><ol id="8e1c12ff-6f1e-4a79-88d8-21307abbbe81" class="numbered-list" start="2"><li>picture</li></ol><ol id="c664beaa-2ec5-4e3d-b5e9-b5ddcd9c79a1" class="numbered-list" start="3"><li>source</li></ol><p id="91e3d8f9-99c5-4b35-a1be-c83cbe2b6a0b" class="">Other: object, param, embed</p><h1 id="8de0cff2-8a6e-48c3-8ceb-34a275f9aa1e" class="">Other Sections</h1><p id="2635df1f-aafc-419f-969f-61462755008c" class="">There are two other sections (Demarcated Edits and Web Components) that you don&#x27;t need to know right now, but the last section for Obsolete and Deprecated Elements is very important to look over. You will undoubtedly run into these elements in articles or tutorials that were written years ago. Do your best to avoid them. Even though browsers might be able to handle them, they are getting phased out and shouldn&#x27;t be added to new projects. If you see them in an old project, figure out how to update them to modern elements.</p><p id="1ebceaf6-8b2f-4e72-881e-7037d4c8bc5c" class="">
+</p></div></article></body></html>
