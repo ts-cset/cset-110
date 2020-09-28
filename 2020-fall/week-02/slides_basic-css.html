@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basic CSS</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://ts-cset.github.io/cset-105/assets/slides.css" />
+
+    <style type="text/css">
+      .glowing {
+        animation: glowing 5000ms infinite;
+        animation-timing-function: ease;
+      }
+      @keyframes glowing {
+        0% {
+          color: var(--nord1);
+          font-size: 55px;
+          text-shadow: 0 0 1px var(--nord3);
+          transform: rotate(0deg);
+        }
+        50% {
+          color: var(--nord8);
+          font-size: 250px;
+          text-shadow: 0 0 40px var(--nord3);
+          transform: rotate(360deg);
+        }
+        100% {
+          color: var(--nord1);
+          font-size: 55px;
+          text-shadow: 0 0 1px var(--nord3);
+          transform: rotate(720deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: middle
+
+<span>.eight[CSET-110]</span><br>
+<span>.eight[Web Development I]</span>
+
+# Basic CSS
+
+---
+
+# Today's Goal
+
+To understand how Cascading Style Sheets work and what we can do with them.
+
+---
+
+# Contents:
+
+- [What's the point?](#why)
+- [How do we use it?](#how)
+- [CSS Properties](#properties)
+- [Where do we write it?](#where)
+- [CSS Selectors](#selectors)
+
+---
+name: why
+
+# What's the point?
+
+[CSS Zen Garden Examples](http://www.csszengarden.com/)
+
+- This project should show the power of CSS-based design
+- Every example uses _the exact same HTML_
+- The only change is a link to a different stylesheet
+
+---
+
+# .eight[Cascading Style Sheets]
+
+- ~~Programming language~~
+- ~~Markup language~~
+- Style sheet language
+
+--
+count: false
+
+A language to declare a list of rules to define a page's style.
+
+---
+name: how
+
+# How do we use it?
+
+<img alt="Anatomy of a CSS Ruleset" src="https://mdn.mozillademos.org/files/9461/css-declaration-small.png" width="80%" />
+
+---
+
+# CSS Syntax
+
+- .eight[Rulesets]: Groups of rules to effect some HTML
+- .eight[Selectors]: The HTML elements targeted by a ruleset
+- .eight[Declarations]: The rules to apply to the selected elements
+- .eight[Properties]: The attribute we are changing
+- .eight[Values]: The style we are changing it to
+
+---
+
+# CSS Syntax
+
+- Each ruleset needs one or more selectors, separated by commas: `p, h1`
+- Each ruleset is wrapped in curly braces: `{}`
+- Separate each declaration with a semicolon: `;`
+- Separate the property from its value(s) with a colon: `:`
+
+---
+
+# _Changing_ Style?
+
+_Remember, CSS is needed to render a page._
+
+- Every browser has default CSS for every element
+- Our CSS can override those defaults
+
+--
+
+There's common conventions, but each browser might be different.
+
+---
+name: properties
+
+# CSS Properties
+
+<ul>
+  <li style="color: red;">color</li>
+  <li style="background-color: lightgrey">background-color</li>
+  <li style="font-family: fantasy, monospace;">font-family</li>
+  <li style="font-weight: bold;">font-weight</li>
+  <li style="font-style: italic;">font-style</li>
+  <li style="list-style: circle;">list-style</li>
+  <li style="text-decoration: underline;">text-decoration</li>
+  <li style="text-transform: uppercase;">text-transform</li>
+</ul>
+
+---
+
+# So Many Properties!
+
+[MDN's CSS Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
+
+---
+
+# CSS Properties
+
+- Can be generic, or specific to certain elements
+- Some are grouped together, need to be used as a group
+- Can be dependent on other property values
+- Can be obsolete or experimental
+
+--
+count: false
+
+Each property has its own rules about values it can accept.
+
+---
+name: where
+class: middle, center
+
+# .fourteen[But where do we write it?]
+
+---
+
+# Inline Style
+
+```html
+&lt;body&gt;
+  &lt;p style="color: red;"&gt;red paragraph&lt;/p&gt;
+&lt;/body&gt;
+```
+
+- Add a .eight[style] attribute to an opening tag
+- List declarations separated by semi-colons
+- No need for a selector
+
+---
+
+# Internal Stylesheet
+
+```html
+&lt;head&gt;
+  &lt;style type="text/css"&gt;
+    p {
+      color: red;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+```
+
+- Add a `&lt;style&gt;` element to the page's `&lt;head&gt;`
+- List all rulesets inside the style tags
+- Works for the whole page
+
+---
+
+# External Stylesheet
+
+```html
+&lt;head&gt;
+  &lt;link href="styles.css" rel="stylesheet" type="text/css"&gt;
+&lt;/head&gt;
+```
+
+- Create a separate file for CSS
+- Attach it to the page using the `&lt;link&gt;` element
+  - Add the filepath to the `href` attribute
+  - Specify the .eight[type] and .eight[relationship]
+- Works for the whole website!
+
+---
+
+# Three Options
+
+- .eight[Inline]: have to define for every. single. element.
+- .eight[Internal]: have to define for every. single. page.
+- .eight[External]: define once, use anywhere!
+
+---
+class: middle, center
+
+# .eleven[Always use External Stylesheets.]
+
+---
+name: selectors
+
+# CSS Selectors
+
+Pattern at the start of the ruleset by which the browser will match, or select, all the elements that should be styled by the rulset.
+
+- Browser receives HTML file
+- Reads it to build the Document Object Model
+- Browser receives CSS file
+- For each ruleset, from _top to bottom_:
+  - Find any element object that matches the selector
+  - Update that object with style rules
+
+---
+
+# Multiple Declarations
+
+```css
+p {
+  color: red;
+  width: 500px;
+  border: 1px solid black;
+}
+```
+
+---
+
+# Multiple Selectors
+
+```css
+p, a, h1 {
+  color: red;
+}
+```
+
+---
+class: middle, center
+
+# .fourteen[So how do I style _some_ of my paragraphs?]
+
+???
+There's different selector types.
+
+---
+
+# Types of Selectors
+
+- By .eight[element] type: `p`
+- By the .eight[class] attribute: `.warning`
+- By the .eight[id] attribute: `#page-title`
+- By any .eight[attribute]: `img[alt]`
+- By .eight[pseudo-classes]: `a:hover`
+
+--
+count: false
+
+Or by combining any of these with .eight[combinators]
+
+---
+
+# .eight[Element Selector]
+
+All HTML elements of the specified type.
+
+```css
+p {...}
+```
+Selects all `&lt;p&gt;` elements.
+
+---
+
+# .eight[Class Selector]
+
+All elements on the page with the specified class.
+
+```css
+.my-class {...}
+```
+Selects `&lt;p class="my-class"&gt;` _and_ `&lt;a class="my-class"&gt;`
+
+---
+
+# .eight[ID Selector]
+
+The single element on the page with the specified ID.
+
+```css
+#my-id {...}
+```
+Selects `&lt;p id="my-id"&gt;` _or_ `&lt;a id="my-id"&gt;`
+
+.eleven[Do NOT overuse.]
+
+---
+
+# .eight[Attribute Selector]
+
+All elements on the page with the specified attribute
+
+```css
+img[alt] {...}
+```
+Selects `&lt;img src="logo.jpg" alt="Some Alt Text"&gt;` but _not_ `&lt;img src="logo.jpg"&gt;`
+
+---
+
+# .eight[Attribute Selector]
+
+...or attribute value
+
+```css
+input[type="radio"] {...}
+```
+Selects `&lt;input type="radio"&gt;` but _not_ `&lt;input type="text"&gt;`
+
+---
+
+# .eight[Pseudo-class Selector]
+
+The specified element, but only when it's in the specified state.
+
+```css
+a:hover {...}
+```
+
+Selects `&lt;a&gt;` but only when the cursor is hovering over the link.
+
+---
+
+# Advanced Topic
+
+[Learn More Selector Types](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors)
+
+- Pseudo-elements
+- Combinators
+- etc.
+
+---
+
+# .eight[Comments]
+
+```css
+/*
+Anything here is
+ignored by the browser
+*/
+
+p {
+  color: red; /* same here! */
+}
+```
+
+---
+
+# Organization
+
+```css
+/* GENERAL */
+...
+
+/* HEADER */
+...
+
+/* NAVIGATION */
+...
+```
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
