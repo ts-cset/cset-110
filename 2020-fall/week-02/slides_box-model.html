@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Box Model</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://ts-cset.github.io/cset-105/assets/slides.css" />
+    <style type="text/css">
+      .space-below {
+        margin-bottom: 20px;
+      }
+      .inline {
+        border: 1px solid blue;
+        display: inline;
+      }
+      .block {
+        border: 1px solid red;
+        display: block;
+      }
+      .inline-block {
+        border: 1px solid green;
+        display: inline-block;
+      }
+      a.inline, a.block, a.inline-block {
+        color: blue;
+      }
+      a.inline:hover, a.block:hover, a.inline-block:hover {
+        color: red;
+      }
+      .full-width {
+        width: 100%;
+      }
+      .half-width {
+        width: 50%;
+      }
+      .third-width {
+        width: 30%;
+      }
+      .large-height {
+        height: 100px;
+      }
+      .full-height {
+        height: 100%;
+      }
+      .half-height {
+        height: 50%;
+      }
+      code.remark-inline-code {
+        line-height: 1.75;
+      }
+      .centered-block {
+        border: 1px solid red;
+        display: block;
+        margin: 0 auto;
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: middle
+
+<span>.eight[CSET-110]</span><br>
+<span>.eight[Web Development I]</span>
+
+# The Box Model
+
+---
+
+# Today's Goal
+
+To understand how the browser treats all elements like boxes and how we can manipulate them with styles.
+
+---
+
+# Contents:
+
+- [Display Property](#display)
+- [Dimensions](#dimensions)
+- [Types Of Units](#units)
+- [Boxes!](#boxes)
+
+---
+name: display
+
+# Two Types of Elements
+
+What's the difference between these groups of elements?
+
+1. `&lt;p&gt;`, `&lt;ol&gt;`, `&lt;ul&gt;`, `&lt;li&gt;`, etc.
+2. `&lt;a&gt;`, `&lt;strong&gt;`, `&lt;em&gt;`, etc.
+
+---
+
+# Two Types of Elements
+
+- .eight[Block]: starting on a new line
+- .eight[Inline]: starting on the same line
+
+---
+count: false
+
+# Two Types of Elements
+
+- .eight[Block]: ~~starting on a new line~~ occupy any available width regardless of content
+- .eight[Inline]: ~~starting on the same line~~ occupy only the width its content requires
+
+---
+
+# The Display Property
+
+That behavior is determined by the element's default `display` value.
+
+<div class="block space-below">display: block;</div>
+<span class="inline">display: inline;</span>
+
+---
+
+# Examples
+
+<span class="inline space-below">display: inline;</span>
+<div class="block space-below">display: block;</div>
+<div class="block space-below">display: block;</div>
+<span class="inline">display: inline;</span>
+<span class="inline">display: inline;</span>
+<span class="inline">display: inline;</span>
+<span class="inline">display: inline;</span>
+<span class="inline">display: inline;</span>
+<span class="inline">display: inline;</span>
+<span class="inline">display: inline;</span>
+
+---
+class: middle
+
+### Source:
+```html
+&lt;a href="#"&gt;click here&lt;/a&gt;
+```
+```css
+a { display: inline; }
+```
+### Output:
+<a href="#" class="inline">click here</a>
+
+---
+class: middle
+
+### Source:
+```html
+&lt;a href="#"&gt;click here&lt;/a&gt;
+```
+```css
+a { display: inline; width: 100%; }
+```
+### Output:
+<a href="#" class="inline full-width">click here</a>
+
+---
+class: middle
+
+### Source:
+
+```html
+&lt;a href="#"&gt;click here&lt;/a&gt;
+```
+```css
+a { display: block; }
+```
+
+### Output:
+
+<a href="#" class="block">click here</a>
+
+---
+class: middle
+
+### Source:
+
+```html
+&lt;a href="#"&gt;click here&lt;/a&gt;
+```
+```css
+a { display: block; width: 50%; }
+```
+
+### Output:
+
+<a href="#" class="block half-width">click here</a>
+
+---
+name: dimensions
+class: middle, center
+
+Rule #1
+
+# .eleven[Dimensions can only be applied to block elements.]
+
+---
+class: middle
+
+# Other Display Values
+
+```css
+display: none;
+```
+```css
+display: inline-block;
+```
+
+---
+class: middle
+
+### Source:
+
+```html
+&lt;p style="display: none;"&gt;You won't see me&lt;/p&gt;
+```
+
+### Output:
+<p style="display: none;">You won't see me</p>
+
+---
+class: middle
+
+### Source:
+
+```html
+&lt;p style="display: inline-block;"&gt;we're&lt;/p&gt;
+&lt;p style="display: inline-block;"&gt;inline&lt;/p&gt;
+&lt;p style="display: inline-block;"&gt;blocks&lt;/p&gt;
+```
+
+### Output:
+<p class="inline-block">we're</p>
+<p class="inline-block">inline</p>
+<p class="inline-block">blocks</p>
+
+---
+class: middle, center
+
+Rule #1
+
+# .eleven[Dimensions can only be applied to block elements.]
+
+---
+
+### Source:
+
+```html
+&lt;p style="display: inline-block; width: 30%;"&gt;we're&lt;/p&gt;
+&lt;p style="display: inline-block; width: 30%;"&gt;inline&lt;/p&gt;
+&lt;p style="display: inline-block; width: 30%;"&gt;blocks&lt;/p&gt;
+```
+
+### Output:
+<p class="inline-block third-width">we're</p>
+<p class="inline-block third-width">inline</p>
+<p class="inline-block third-width">blocks</p>
+
+---
+class: middle
+
+<div class="block space-below">display: block;</div>
+<div class="block large-height space-below">display: block; height: 100px;</div>
+<span class="inline" style="height: 50px;">display: inline; height: 50px;</span>
+
+---
+
+# Reference
+
+- [MDN CSS Display Property](https://developer.mozilla.org/en-US/docs/Web/CSS/display)
+- [MDN Layout in Normal Flow](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow)
+
+---
+name: units
+
+# What's the difference between these two property values?
+
+```css
+width: 50%;
+height: 50px;
+```
+
+--
+
+[Absolute vs Relative Length Units](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Values_and_units#Numbers_lengths_and_percentages)
+
+---
+
+### Source:
+
+```html
+&lt;div class="parent"&gt;
+  &lt;div class="child"&gt;&lt;/div&gt;
+&lt;/div&gt;
+```
+```css
+.parent { height: 100px; }
+.child { width: 50%; height: 50%; }
+```
+
+### Output:
+
+<div class="block large-height">
+  <div class="block half-height half-width"></div>
+</div>
+
+---
+class: middle, center
+
+Rule #2
+
+# .eleven[Some values are calculated relatively to the properties of their parent.]
+
+---
+name: box
+class: middle, center
+
+# .fourteen[Why is everything a box?]
+
+---
+class: middle, center
+
+<img alt="round kitten image" src="http://placekitten.com/400/400" style="border: 10px solid var(--nord1); border-radius: 50%;"/>
+
+.fourteen[Calculate the size of that circle.]
+
+---
+class: middle, center
+
+Rule 3
+
+# .eleven[The browser treats everything as a box because it's easier.]
+
+
+---
+
+# The Box Model
+
+<img alt="Box Model" src="https://learn.shayhowe.com/assets/images/courses/html-css/opening-the-box-model/box-model.png" width="100%"/>
+
+---
+
+# The Box Model
+
+Width and height define the content's dimensions. These properties build onto it:
+
+- .eight[Padding]: space around content
+- .eight[Border]: styled line around padding
+- .eight[Margin]: space around border
+
+---
+
+# Calculate Total Width
+
+```
+margin-left
++ border-left-width
++ padding-left
++ width
++ padding-right
++ border-right-width
++ margin-right
+```
+
+---
+
+# Calculate Total Height
+
+```
+margin-top
++ border-top-width
++ padding-top
++ height
++ padding-bottom
++ border-bottom-width
++ margin-bottom
+```
+
+
+---
+
+# .fourteen[How big is this element?]
+
+```css
+div {
+  border: 6px solid #949599;
+  height: 100px;
+  margin: 20px;
+  padding: 20px;
+  width: 400px;
+}
+```
+
+---
+
+# .fourteen[What about this element?]
+
+```css
+div {
+  border: 6px solid #949599;
+  margin: 20px;
+  padding: 20px;
+}
+```
+
+---
+
+# Automatic Dimensions
+
+- Height and weight have default values of `auto`
+- The browser calculates the actual values automatically
+- We've already seen this with .eight[inline] elements
+
+--
+- We can use `auto` in other places too
+
+---
+
+# Fluid Margin
+
+### Source:
+
+```html
+&lt;div&gt;centered block&lt;/div&gt;
+```
+```css
+div { margin: 0 auto; width: 50%; }
+```
+
+### Output:
+<div class="centered-block">centered block</div>
+
+---
+
+# Notes on Margin
+
+- Used to add spacing _between_ elements
+- Default margins added to elements like `p` and `h1` tags
+- Inline elements don't accept top and bottom margin
+- Sometimes top and bottom margins overlap. [Read more here.](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+
+---
+
+# Notes on Padding
+
+- Used to add spacing _within_ elements
+- Inline elements accept padding on all sides
+- However, top and bottom padding can bleed into the lines above and below
+
+
+---
+class: middle, center
+
+# Default Box Model
+
+[MDN: CSS Box-Sizing Property](https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing)
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
