@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Responsive Design</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://ts-cset.github.io/cset-105/assets/slides.css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: middle
+
+<span>.eight[CSET-110]</span><br>
+<span>.eight[Web Development I]</span>
+
+# Responsive Design
+
+---
+
+# Contents:
+
+- [Problem of Screens](#screens)
+- [Potential Solutions](#solutions)
+- [Mobile First Design](#mobile)
+
+---
+name: screens
+
+# What is .eight[Screen Resolution]?
+
+---
+
+# Screen Resolution
+
+- Fixed dimension of pixels, or dots of color, for a screen.
+- Measured in .eight[width] by .eight[height], like 1920x1200
+- Aspect ratio is the relationship between width and height, like 16:10
+--
+
+- "Retina" and other high definition displays screw this up...
+
+---
+
+# CSS Pixel
+
+> "The CSS pixel—denoted in CSS with the suffix px—is a unit of length which
+**roughly corresponds to the width or height of a single dot that can be
+comfortably seen by the human eye without strain**, but is otherwise as small as
+possible. By definition, this is the physical size of a single pixel at a pixel
+density of 96 DPI, located an arm's length away from the viewer's eyes."
+
+---
+class: middle, center
+
+# .fourteen[Experiment]
+
+## Let's list all the screen resolutions of all the devices in the room.
+
+---
+class: middle, center
+
+# .eight[So which should we build for?]
+
+---
+count: false
+class: middle, center
+
+# .eight[So which should we build for?]
+
+## All of them.
+
+---
+name: solutions
+
+# History of Screens
+
+- Screens and sizes have changed over time
+- So have the solutions changed
+
+---
+
+# Attempt #1: CSS 2.1
+
+Ye olde sylesheets allowed a .eight[media] type:
+
+```html
+&lt;link rel="stylesheet" type="text/css" href="main.css"
+  media="screen" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="print.css"
+  media="print" /&gt;
+```
+
+---
+
+# Attempt #1: CSS 2.1
+
+- Browser only requests the relevant stylesheet
+- Less work for the browser
+- More work for you
+
+--
+
+.fourteen[Verdict:] Helpful in some situations, not a fix for all our screens.
+
+---
+
+# Attempt #2: User Agent Queries
+
+- User Agent: software acting on behalf of a user (e.g. web browser or email client)
+- [Example User Agent Strings](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent)
+- Server configuration that responds differently for each request, "Desktop Site" or "Mobile Site"
+- Double the work!
+- Less consistent user experience
+
+--
+
+.fourteen[Verdict:] Don't bother.
+
+---
+
+# Attempt #3: Relative Units Only
+
+- Percent all the things!
+- [MDN: Length units](https://developer.mozilla.org/en-US/docs/Web/CSS/length)
+- Creates fluid-ish layout
+- One relative size still doesn't fit all
+
+--
+
+.fourteen[Verdict:] Handy, but there's still a better way...
+
+---
+
+# Attempt #4: CSS3 Media Queries
+
+Welcome to the world of tomorrow!
+
+```css
+@media &lt;condition&gt; {
+  /* If condition is true, apply these rulesets */
+  ...
+}
+```
+
+.fourteen[Verdict:] We've got a winner!
+
+---
+
+# Example Condition
+
+```css
+@media screen and (max-width: 480px) {
+  p {
+    color: red;
+  }
+}
+```
+
+If the device has a screen and it's width is not more than 480px, then all paragraphs will be red;
+
+---
+class: middle, center
+
+# .eight[Breakpoint]
+
+## The point at which a media query is or is not applied.
+
+---
+class: middle, center
+
+# There's a Lot of Conditions
+
+## [MDN: Using media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#Syntax)
+
+---
+
+# .eleven[Beware!]
+
+Don't mix Attempts #2 and #4
+
+```css
+@media &lt;some phone size&gt; {
+  /* All phone styles... */
+}
+@media &lt;some desktop size&gt; {
+  /* All desktop styles... */
+}
+```
+
+Goes back to the "mobile" vs. "desktop" site problems. There's a better way.
+
+---
+name: mobile
+
+# Mobile First Design
+
+Default styles for small screens and .eight[progressively enhance] the design.
+
+- Pick the smallest size that the *content* allows.
+- Once styled, resize larger until you *want/need* to tweak something.
+- Sprinkle in targeted media queries for that *exact* piece of content.
+
+Basically, listen to the needs of your content.
+
+---
+class: middle, center
+
+<img alt="Content is like water" src="https://miro.medium.com/max/1600/1*gFqItc58z45f2VOq9u97DQ.jpeg" width="70%"/>
+
+From [Two CSS Tricks That’ll Make Your Site Fully Responsive](https://medium.com/@mchisti/two-css-tricks-thatll-make-your-site-fully-responsive-5f9efba4015e)
+
+---
+
+# Why Mobile First?
+
+It has the most constraints:
+
+- Available space
+- Network capacity
+- Interactive features
+
+It's easier to change a design as you get more freedom, not the other way
+around.
+
+---
+
+
+# Be Fluid!
+
+.eight[Responsive] vs. .eight[Adaptive]:
+
+<img alt="Fluid vs snapping layouts" src="https://css-tricks.com/wp-content/uploads/2015/11/rwd-vs-adapt-example.gif" width="100%" />
+
+From [CSS Tricks: The Difference Between Responsive and Adaptive Design](https://css-tricks.com/the-difference-between-responsive-and-adaptive-design/)
+
+---
+
+# Some Example Layouts
+
+I don't know which article came first, so here's both...
+
+- [LukeW: Multi-Device Layout Patterns](https://www.lukew.com/ff/entry.asp?1514)
+- [Google Web Fundamentals: Responsive Web Design Patterns](https://developers.google.com/web/fundamentals/design-and-ux/responsive/patterns)
+
+---
+
+# Some More Patterns
+
+## [Brad Frost's *This is Responsive*](https://bradfrost.github.io/this-is-responsive/)
+
+---
+
+# More Resources:
+
+The Original: [Responsive Web Design](https://alistapart.com/article/responsive-web-design/) by Ethan Marcotte
+
+- [CSS-Tricks: Media Queries for Standard Devices](https://css-tricks.com/snippets/css/media-queries-for-standard-devices/)
+- [Froont: Nine Principles of Responsive Design](https://blog.froont.com/9-basic-principles-of-responsive-web-design/)
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
